@@ -1,0 +1,15 @@
+.idea
+# Python bytecode / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虚拟环境（可选，通常也要忽略）
+venv/
+.venv/
+
+# 日志（你这个脚本会写 logs）
+logs/
+
+# 环境变量
+.env

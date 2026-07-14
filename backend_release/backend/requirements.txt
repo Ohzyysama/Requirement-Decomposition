@@ -1,0 +1,34 @@
+# Basic framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart>=0.0.5
+
+# Database
+sqlalchemy==2.0.23
+aiomysql==0.2.0
+alembic==1.12.1
+pymysql==1.1.0
+
+# Data validation
+pydantic==2.5.0
+pydantic-settings==2.1.0
+instructor==0.6.8
+email-validator>=1.3.0
+
+# JWT & 安全
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+# passlib 1.7.x 依赖 bcrypt.__about__；bcrypt>=4.1 已移除，会报 AttributeError
+bcrypt>=4.0.1,<4.1
+
+# LLM
+openai==1.3.0
+
+# State machine
+transitions==0.9.0
+
+# Async
+websockets==12.0
+
+# Environment variables
+python-dotenv==1.0.0
