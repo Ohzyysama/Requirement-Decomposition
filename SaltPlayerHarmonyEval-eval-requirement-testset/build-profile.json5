@@ -1,0 +1,83 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/moriafly/.ohos/config/default_SaltPlayerHarmony_x6pcF9HYXQkOICSvovnEYAL0TBgrr6wqNMfvugxUtmU=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A2356D7545EB231F4351E0CF87FC3C8B21A911BE1F0C4DA003676A8328DD8D3C53AB0DB6D2D7A",
+          "profile": "/Users/moriafly/.ohos/config/default_SaltPlayerHarmony_x6pcF9HYXQkOICSvovnEYAL0TBgrr6wqNMfvugxUtmU=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/moriafly/.ohos/config/default_SaltPlayerHarmony_x6pcF9HYXQkOICSvovnEYAL0TBgrr6wqNMfvugxUtmU=.p12",
+          "storePassword": "0000001A760F903937E9DEFB82B92C782834F317D67077F78148FB342FC1F9C3219E1F20839A241466EF"
+        }
+      },
+      {
+        "name": "debug",
+        "type": "HarmonyOS",
+        "material": {
+          "storeFile": "/Users/moriafly/GitHub/xuncorp.p12",
+          "storePassword": "00000020B1B91A4ED48DB7D7DA6E514F4F230E9E59E3E76ACCEB8C335A0F4342ACEE8A78EF4AC2816E9002FF7C41F746",
+          "keyAlias": "xuncorp",
+          "keyPassword": "000000209F51735096B2BDA93C4C3ECD27160ADBC694F03B3218BE5BBF547156CB4897DF7EA37E716C9BAC5CB1F5F1EF",
+          "signAlg": "SHA256withECDSA",
+          "profile": "/Users/moriafly/GitHub/IAP DebugDebug.p7b",
+          "certpath": "/Users/moriafly/GitHub/IAP Debug.cer"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "6.1.0(23)",
+        "compatibleSdkVersion": "6.0.2(22)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      },
+      {
+        "name": "debug",
+        "signingConfig": "debug",
+        "targetSdkVersion": "6.1.0(23)",
+        "compatibleSdkVersion": "6.0.2(22)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default",
+            "debug"
+          ]
+        }
+      ]
+    }
+  ]
+}

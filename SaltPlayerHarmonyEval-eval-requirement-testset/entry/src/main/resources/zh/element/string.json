@@ -1,0 +1,2292 @@
+{
+  "string": [
+    {
+      "name": "aaudio_intro",
+      "value": "原生高性能低延迟输出，但无法配合使用系统音效以及第三方音效软件"
+    },
+    {
+      "name": "about",
+      "value": "关于"
+    },
+    {
+      "name": "about_settings_intro",
+      "value": "软件信息、软件使用条例、隐私协议、开源许可、联系开发者等"
+    },
+    {
+      "name": "access_link",
+      "value": "访问链接"
+    },
+    {
+      "name": "accessibility",
+      "value": "无障碍"
+    },
+    {
+      "name": "accessibility_intro",
+      "value": "为视力障碍用户提供更好的软件服务"
+    },
+    {
+      "name": "activate",
+      "value": "激活"
+    },
+    {
+      "name": "actual_output_of_device",
+      "value": "设备实际输出"
+    },
+    {
+      "name": "add",
+      "value": "添加"
+    },
+    {
+      "name": "add_custom_folder",
+      "value": "添加自定义文件夹"
+    },
+    {
+      "name": "add_single_direct_link_song",
+      "value": "添加单个直链歌曲"
+    },
+    {
+      "name": "add_time",
+      "value": "添加时间"
+    },
+    {
+      "name": "add_time_desc",
+      "value": "添加时间降序"
+    },
+    {
+      "name": "playlist_add_time",
+      "value": "添加到歌单时间"
+    },
+    {
+      "name": "add_to_my_favorite_songs",
+      "value": "添加到我喜欢的歌曲"
+    },
+    {
+      "name": "add_to_playlist",
+      "value": "添加到歌单"
+    },
+    {
+      "name": "added_to_playlist",
+      "value": "已添加到歌单"
+    },
+    {
+      "name": "additional_pro_features_intro",
+      "value": "更多 Pro 功能散落在设置页面的各个角落，可以前往专门的分类页面查看"
+    },
+    {
+      "name": "address",
+      "value": "地址"
+    },
+    {
+      "name": "agree",
+      "value": "同意"
+    },
+    {
+      "name": "album",
+      "value": "专辑"
+    },
+    {
+      "name": "album_artist",
+      "value": "专辑艺术家"
+    },
+    {
+      "name": "album_artwork",
+      "value": "专辑视觉设计"
+    },
+    {
+      "name": "album_cover",
+      "value": "专辑封面"
+    },
+    {
+      "name": "album_desc",
+      "value": "专辑降序"
+    },
+    {
+      "name": "album_list_settings",
+      "value": "专辑列表设置"
+    },
+    {
+      "name": "album_s",
+      "value": "专辑：%s"
+    },
+    {
+      "name": "albums",
+      "value": "专辑"
+    },
+    {
+      "name": "alipay",
+      "value": "支付宝"
+    },
+    {
+      "name": "all_audio_information",
+      "value": "所有音频信息"
+    },
+    {
+      "name": "also_close_desktop_lyrics",
+      "value": "同时关闭桌面歌词？"
+    },
+    {
+      "name": "also_close_desktop_lyrics_intro",
+      "value": "即便桌面歌词按钮不显示在系统音乐通知栏或控制中心音乐面板，也可通过设置中桌面歌词按钮直接控制"
+    },
+    {
+      "name": "floating_window_permission_reason",
+      "value": "用于在其他应用上层显示桌面歌词悬浮窗。"
+    },
+    {
+      "name": "no_floating_window_permission",
+      "value": "无悬浮窗权限"
+    },
+    {
+      "name": "always",
+      "value": "总是"
+    },
+    {
+      "name": "android_media_store",
+      "value": "鸿蒙媒体库"
+    },
+    {
+      "name": "app_name",
+      "value": "Salt Player"
+    },
+    {
+      "name": "app_recommendation",
+      "value": "应用推荐"
+    },
+    {
+      "name": "app_registration_number",
+      "value": "App 备案号"
+    },
+    {
+      "name": "app_tag",
+      "value": "数十万用户选择的本地音乐播放器"
+    },
+    {
+      "name": "arranger",
+      "value": "编曲"
+    },
+    {
+      "name": "artist",
+      "value": "艺术家"
+    },
+    {
+      "name": "artist_desc",
+      "value": "艺术家降序"
+    },
+    {
+      "name": "artist_s",
+      "value": "艺术家：%s"
+    },
+    {
+      "name": "artists",
+      "value": "艺术家"
+    },
+    {
+      "name": "ask",
+      "value": "询问"
+    },
+    {
+      "name": "attenuate_flowing_light_effect",
+      "value": "减弱流光效果"
+    },
+    {
+      "name": "attenuate_flowing_light_effect_explain",
+      "value": "减弱流光渲染效果以提升流光渲染性能"
+    },
+    {
+      "name": "audio_decode",
+      "value": "音频解码"
+    },
+    {
+      "name": "audio_decoding",
+      "value": "音频解码"
+    },
+    {
+      "name": "audio_effect",
+      "value": "音频效果"
+    },
+    {
+      "name": "audio_effect_dialog_error_tips",
+      "value": "❗启用原生输出无法配合使用系统均衡器和第三方音效软件"
+    },
+    {
+      "name": "audio_effect_dialog_tips",
+      "value": "软件已适配 Poweramp Equalizer 等音效处理软件"
+    },
+    {
+      "name": "audio_focus",
+      "value": "不与其他应用一起播放（音频焦点）"
+    },
+    {
+      "name": "audio_focus_intro",
+      "value": "开启后将不会与其他应用一起播放，注意此功能可能受你的设备系统影响而不起作用。"
+    },
+    {
+      "name": "audio_focus_is_occupied_by_other_app",
+      "value": "音频焦点正在被其他软件占用"
+    },
+    {
+      "name": "audio_information",
+      "value": "音频信息"
+    },
+    {
+      "name": "audio_of_video",
+      "value": "视频音频"
+    },
+    {
+      "name": "audio_output",
+      "value": "音频输出"
+    },
+    {
+      "name": "audio_output_freq",
+      "value": "音频输出采样频率"
+    },
+    {
+      "name": "audio_output_mode",
+      "value": "音频输出模式"
+    },
+    {
+      "name": "audio_output_settings_intro",
+      "value": "与其他应用同时播放（音频焦点）、输出模式、采样率、解码、DSD、DSP 等"
+    },
+    {
+      "name": "audio_output_tip",
+      "value": "❗请谨慎调整以下选项，以免造成过高的电量消耗以及程序被系统杀死等其他不确定后果，以下部分选项的更改将在切换歌曲后生效"
+    },
+    {
+      "name": "audio_output_tips",
+      "value": "❗请详细了解了你的设备后再更改以上设置，更改将在切换歌曲后生效，过高的播放器初始化采样率设定可能会造成严重的资源浪费和电量消耗"
+    },
+    {
+      "name": "audio_session_id",
+      "value": "音频会话标识"
+    },
+    {
+      "name": "audio_track_intro",
+      "value": "默认音轨输出"
+    },
+    {
+      "name": "author",
+      "value": "作者"
+    },
+    {
+      "name": "author_email",
+      "value": "moriafly@163.com"
+    },
+    {
+      "name": "authorization_description",
+      "value": "权限授权说明"
+    },
+    {
+      "name": "authorization_description_for_read_external_storage",
+      "value": "读取共享存储中的音频文件（不包含对照片、视频的读取，若见系统请求说明中包含，为 Android 12 及以下系统未细分权限故而统一描述），授权后才可获取 ANDROID MEDIA STORE 音频文件信息等。若同意此对话后未见系统授权询问，可能是本软件的此权限被设定为“拒绝并不再提示”，请手动前往系统设置更改"
+    },
+    {
+      "name": "auto_eq_intro",
+      "value": "使用 PEAKEQ 参数均衡器，避免固定频段（图形）均衡器难以补偿落在两个频段之间的窄缺口和峰值的问题，还原来自 AutoEq 库等精确参数，为你带来完美听感，建议配合耳机使用。"
+    },
+    {
+      "name": "auto_matching_of_network_album_info",
+      "value": "自动匹配网络专辑信息"
+    },
+    {
+      "name": "auto_matching_of_network_lyrics",
+      "value": "自动匹配网络歌词"
+    },
+    {
+      "name": "auto_matching_of_network_lyrics_explain",
+      "value": "当无法获取到内嵌以及歌词文件（同目录同名 .lrc 文件）时尝试获取网络歌词"
+    },
+    {
+      "name": "auto_playback",
+      "value": "自动播放"
+    },
+    {
+      "name": "auto_start_on_boot",
+      "value": "开机自启"
+    },
+    {
+      "name": "auto_start_permission_on_miui",
+      "value": "在 MIUI 上的自启动权限"
+    },
+    {
+      "name": "auto_start_permission_on_miui_intro",
+      "value": "在桌面上长按本软件图标弹出选择菜单，点击“应用信息”选项，找到“权限相关”分类项小标题，开启名为“自启动”的开关。打开自启动权限有助于软件在后台稳定运行（检测适用于 MIUI 10 至 14）"
+    },
+    {
+      "name": "automatically_disrupt_the_random_play_queue",
+      "value": "自动打乱随机播放队列"
+    },
+    {
+      "name": "automatically_extend_to_the_end_of_the_whole_song",
+      "value": "自动延长到整首歌播完"
+    },
+    {
+      "name": "automatically_extend_to_the_end_of_the_whole_song_intro",
+      "value": "延长时间会以类似 +5:20 的形式标识（加号）；时长会受到播放速率的影响（不支持倒放模式）；若进入此状态手动暂停、切歌均会取消定时关闭（会以弹窗形式告知）"
+    },
+    {
+      "name": "average_latency",
+      "value": "平均延迟"
+    },
+    {
+      "name": "back",
+      "value": "返回"
+    },
+    {
+      "name": "back_cover",
+      "value": "封底"
+    },
+    {
+      "name": "background_color",
+      "value": "背景颜色"
+    },
+    {
+      "name": "background_cover_of_playback_screen",
+      "value": "播放界面背景图片"
+    },
+    {
+      "name": "background_cover_of_player_screen_info",
+      "value": "禁用流光而使用自定义的播放界面背景，注意可能会有前景按钮色彩和背景对比度不强烈导致识别不佳，请手动调整流光效果（浅色流光：前景色为黑，深色流光：前景色为白）"
+    },
+    {
+      "name": "background_music_protection",
+      "value": "后台音乐保护"
+    },
+    {
+      "name": "baidu_pan",
+      "value": "百度网盘"
+    },
+    {
+      "name": "basic_information",
+      "value": "基本信息"
+    },
+    {
+      "name": "bass_boost",
+      "value": "低音增强"
+    },
+    {
+      "name": "beautify",
+      "value": "美化"
+    },
+    {
+      "name": "channels",
+      "value": "声道"
+    },
+    {
+      "name": "bit_depth",
+      "value": "位深"
+    },
+    {
+      "name": "bitrate",
+      "value": "比特率"
+    },
+    {
+      "name": "blocked_folders",
+      "value": "被屏蔽的文件夹"
+    },
+    {
+      "name": "buy_or_restore_purchase",
+      "value": "购买或恢复购买"
+    },
+    {
+      "name": "cache",
+      "value": "缓存"
+    },
+    {
+      "name": "cancel",
+      "value": "取消"
+    },
+    {
+      "name": "car_bluetooth_lyrics",
+      "value": "车载蓝牙歌词"
+    },
+    {
+      "name": "car_bluetooth_lyrics_intro",
+      "value": "将会以媒体会话的方式发送当前歌词，注意专心驾驶"
+    },
+    {
+      "name": "car_kit",
+      "value": "车载"
+    },
+    {
+      "name": "cellphone_number",
+      "value": "手机号"
+    },
+    {
+      "name": "change_device_freq",
+      "value": "尝试强制更改输出设备的采样率（实验性功能，适用于高性能 DAC 输出）"
+    },
+    {
+      "name": "change_device_freq_intro",
+      "value": "强制以高频率播放音频（即便输出设备不支持），请同时确保启用原生输出；请注意，大多数设备不支持 96000 Hz 以及更高频率输出，应用更高频率可能会导致播放失败"
+    },
+    {
+      "name": "change_the_language",
+      "value": "改变语言"
+    },
+    {
+      "name": "change_to_your_like",
+      "value": "改成你喜欢的"
+    },
+    {
+      "name": "channel",
+      "value": "渠道"
+    },
+    {
+      "name": "channel_count",
+      "value": "通道数"
+    },
+    {
+      "name": "channel_information",
+      "value": "流通道信息"
+    },
+    {
+      "name": "check_for_updates",
+      "value": "检查更新"
+    },
+    {
+      "name": "choose_color",
+      "value": "选择颜色"
+    },
+    {
+      "name": "circle_playback_cover",
+      "value": "圆形播放封面"
+    },
+    {
+      "name": "circle_playback_mode",
+      "value": "列表循环播放模式"
+    },
+    {
+      "name": "clear",
+      "value": "清除"
+    },
+    {
+      "name": "clear_background",
+      "value": "清除背景"
+    },
+    {
+      "name": "clear_image_cache",
+      "value": "清除图片缓存"
+    },
+    {
+      "name": "clearing_play_queue",
+      "value": "清空播放队列"
+    },
+    {
+      "name": "click_check_for_updates",
+      "value": "点击检查更新"
+    },
+    {
+      "name": "close",
+      "value": "关闭"
+    },
+    {
+      "name": "close_button",
+      "value": "关闭按钮"
+    },
+    {
+      "name": "cloud_drive",
+      "value": "云盘"
+    },
+    {
+      "name": "codec",
+      "value": "编码"
+    },
+    {
+      "name": "collapse",
+      "value": "折叠"
+    },
+    {
+      "name": "comment",
+      "value": "评论"
+    },
+    {
+      "name": "composer",
+      "value": "作曲"
+    },
+    {
+      "name": "compressor",
+      "value": "压限器（Compressor）"
+    },
+    {
+      "name": "compressor_tip",
+      "value": "控制电平，使音乐响亮的部分更安静，而安静的部分更响亮"
+    },
+    {
+      "name": "confirm",
+      "value": "确定"
+    },
+    {
+      "name": "confirm_password",
+      "value": "确认密码"
+    },
+    {
+      "name": "contact",
+      "value": "联系方式"
+    },
+    {
+      "name": "contact_author",
+      "value": "联系作者"
+    },
+    {
+      "name": "content",
+      "value": "内容"
+    },
+    {
+      "name": "copied_to_clipboard",
+      "value": "已复制到剪贴板"
+    },
+    {
+      "name": "copy",
+      "value": "复制"
+    },
+    {
+      "name": "copy_text",
+      "value": "复制文本"
+    },
+    {
+      "name": "copyright",
+      "value": "版权"
+    },
+    {
+      "name": "count",
+      "value": "数量"
+    },
+    {
+      "name": "cover_address",
+      "value": "Cover address"
+    },
+    {
+      "name": "credits",
+      "value": "制作人员"
+    },
+    {
+      "name": "current_version",
+      "value": "当前版本"
+    },
+    {
+      "name": "custom",
+      "value": "自定义"
+    },
+    {
+      "name": "custom_background",
+      "value": "自定义背景"
+    },
+    {
+      "name": "custom_folders",
+      "value": "自定义文件夹"
+    },
+    {
+      "name": "custom_folders_tip",
+      "value": "若使用自定义文件夹功能的同时开启了使用鸿蒙媒体库功能，那么最终扫描到的歌曲为二者并集。如果仅需使用自定义文件夹请关闭使用鸿蒙媒体库功能"
+    },
+    {
+      "name": "custom_home_page_background",
+      "value": "自定义主页背景"
+    },
+    {
+      "name": "d_minutes",
+      "value": "%d 分钟"
+    },
+    {
+      "name": "d_selected",
+      "value": "已选中 %d 项"
+    },
+    {
+      "name": "d_songs",
+      "value": "%d 首"
+    },
+    {
+      "name": "d_songs_were_scanned",
+      "value": "共扫描到 %d 首歌曲"
+    },
+    {
+      "name": "daily_recommendation",
+      "value": "每日推荐"
+    },
+    {
+      "name": "dark",
+      "value": "深色"
+    },
+    {
+      "name": "date_modified",
+      "value": "修改时间"
+    },
+    {
+      "name": "date_modified_desc",
+      "value": "修改时间降序"
+    },
+    {
+      "name": "decoder",
+      "value": "解码器"
+    },
+    {
+      "name": "default_audio_decoding",
+      "value": "默认音频解码"
+    },
+    {
+      "name": "delete_current_image",
+      "value": "删除当前图片"
+    },
+    {
+      "name": "remove_from_library",
+      "value": "从音乐库中移除"
+    },
+    {
+      "name": "delete_playlist",
+      "value": "删除歌单"
+    },
+    {
+      "name": "remove_s_from_library",
+      "value": "从音乐库中移除 %s 吗?"
+    },
+    {
+      "name": "deselect_all",
+      "value": "取消全选"
+    },
+    {
+      "name": "design",
+      "value": "设计"
+    },
+    {
+      "name": "desktop_lyrics",
+      "value": "桌面歌词"
+    },
+    {
+      "name": "desktop_lyrics_closed",
+      "value": "桌面歌词已关闭"
+    },
+    {
+      "name": "desktop_lyrics_locked",
+      "value": "桌面歌词已锁定"
+    },
+    {
+      "name": "desktop_lyrics_opened",
+      "value": "桌面歌词已打开"
+    },
+    {
+      "name": "desktop_lyrics_unlocked",
+      "value": "桌面歌词已解锁"
+    },
+    {
+      "name": "developer",
+      "value": "开发商"
+    },
+    {
+      "name": "developer_email",
+      "value": "开发者邮箱"
+    },
+    {
+      "name": "developer_report",
+      "value": "开发者报告"
+    },
+    {
+      "name": "dialog_sleep_timer_tips",
+      "value": "当用于睡眠，建议降低设备音量且请勿设置过长时间，以免影响听觉"
+    },
+    {
+      "name": "digital_signal_output",
+      "value": "数字信号输出"
+    },
+    {
+      "name": "direct_link",
+      "value": "Direct link"
+    },
+    {
+      "name": "direct_link_cannot_empty",
+      "value": "The direct link cannot be empty"
+    },
+    {
+      "name": "direct_links",
+      "value": "直链"
+    },
+    {
+      "name": "disabled",
+      "value": "已禁用"
+    },
+    {
+      "name": "disabling_aaudio_output_intro",
+      "value": "在 Android 8.0 及更新系统禁用 AAudio 输出而使用 OpenSL ES 输出，可能带来更好的稳定性"
+    },
+    {
+      "name": "disagree",
+      "value": "拒绝"
+    },
+    {
+      "name": "display_add_to_play_next_in_list",
+      "value": "在列表中显示添加下一首播放"
+    },
+    {
+      "name": "display_lock_screen_cover",
+      "value": "显示锁屏封面"
+    },
+    {
+      "name": "display_song_cover_in_list",
+      "value": "在列表中显示歌曲封面"
+    },
+    {
+      "name": "display_song_file_name_in_list",
+      "value": "在列表中显示歌曲文件名"
+    },
+    {
+      "name": "display_song_file_name_in_list_intro",
+      "value": "列表中的歌曲主文本显示为此歌曲的文件名称（包含拓展名）而非显示为文件内嵌的元数据标题"
+    },
+    {
+      "name": "do_not_scan_audio_below_60_seconds",
+      "value": "不扫描 60 秒以下音频"
+    },
+    {
+      "name": "double_row_playlists",
+      "value": "双列歌单"
+    },
+    {
+      "name": "download",
+      "value": "下载"
+    },
+    {
+      "name": "download_it_on_coolapk",
+      "value": "去酷安下载"
+    },
+    {
+      "name": "download_it_on_microsoft_store",
+      "value": "去 Microsoft Store 下载"
+    },
+    {
+      "name": "dsd_audio_gain",
+      "value": "DSD 音频增益"
+    },
+    {
+      "name": "dsd_format_outdated_intro",
+      "value": "DSD 格式已过时，Salt Player 将在未来移除对此格式的支持，建议选择 FLAC 等优秀格式以获取更好的音质、元数据管理体验"
+    },
+    {
+      "name": "dsp",
+      "value": "数字信号处理（DSP）"
+    },
+    {
+      "name": "duration",
+      "value": "时长"
+    },
+    {
+      "name": "dynamic_color_theme",
+      "value": "动态颜色主题"
+    },
+    {
+      "name": "dynamic_flowing_light",
+      "value": "动态流光"
+    },
+    {
+      "name": "dynamic_halo",
+      "value": "灵动光环"
+    },
+    {
+      "name": "dynamic_halo_info",
+      "value": "支持魅族 21 系列 Flyme 12.4.0.0A、魅族 22 Flyme 12.3.1.3A 及更新版本，具体支持情况以实际为准"
+    },
+    {
+      "name": "edit",
+      "value": "编辑"
+    },
+    {
+      "name": "email",
+      "value": "邮箱"
+    },
+    {
+      "name": "emo_scroll",
+      "value": "心事卷轴"
+    },
+    {
+      "name": "enable_or_disable_desktop_lyrics",
+      "value": "打开 / 关闭桌面歌词"
+    },
+    {
+      "name": "enable_service",
+      "value": "启用服务"
+    },
+    {
+      "name": "enabled",
+      "value": "已启用"
+    },
+    {
+      "name": "engineering",
+      "value": "工程"
+    },
+    {
+      "name": "enter_the_playlist_name_here",
+      "value": "在此输入歌单名称"
+    },
+    {
+      "name": "equalizer",
+      "value": "均衡器"
+    },
+    {
+      "name": "error",
+      "value": "错误"
+    },
+    {
+      "name": "exit_app",
+      "value": "退出"
+    },
+    {
+      "name": "expand",
+      "value": "展开"
+    },
+    {
+      "name": "experimental",
+      "value": "实验性"
+    },
+    {
+      "name": "export",
+      "value": "导出"
+    },
+    {
+      "name": "export_txt",
+      "value": "导出 (.txt)"
+    },
+    {
+      "name": "extensions",
+      "value": "拓展"
+    },
+    {
+      "name": "fade_in_or_out_during_play_or_pause",
+      "value": "播放暂停时淡入淡出"
+    },
+    {
+      "name": "fade_in_out",
+      "value": "淡入淡出"
+    },
+    {
+      "name": "failed_to_add_custom_folder",
+      "value": "添加自定义文件夹失败，因为已经存在其父或子文件夹"
+    },
+    {
+      "name": "fans",
+      "value": "粉丝"
+    },
+    {
+      "name": "feedback",
+      "value": "反馈"
+    },
+    {
+      "name": "file_name",
+      "value": "文件名"
+    },
+    {
+      "name": "file_not_found",
+      "value": "无法找到文件"
+    },
+    {
+      "name": "file_not_found_exception",
+      "value": "无法找到此文件，可能文件已经移动或被删除"
+    },
+    {
+      "name": "find",
+      "value": "发现"
+    },
+    {
+      "name": "float_support",
+      "value": "浮点支持"
+    },
+    {
+      "name": "float_support_dsp",
+      "value": "数字信号输出（DSP）浮点支持"
+    },
+    {
+      "name": "float_support_info",
+      "value": "32 位浮点解码和处理"
+    },
+    {
+      "name": "floating_window_status_bar_lyrics",
+      "value": "悬浮窗状态栏歌词"
+    },
+    {
+      "name": "floating_window_status_bar_lyrics_info",
+      "value": "通过在状态栏空白位置显示迷你型悬浮窗来模拟状态栏歌词"
+    },
+    {
+      "name": "floating_window_status_bar_lyrics_tip",
+      "value": "此功能需要悬浮窗权限，歌曲暂停时会自动隐藏悬浮窗歌词显示，在播放状态下且有滚动歌词的情况以方便调整歌词"
+    },
+    {
+      "name": "folder",
+      "value": "文件夹"
+    },
+    {
+      "name": "folders",
+      "value": "文件夹"
+    },
+    {
+      "name": "follow",
+      "value": "关注"
+    },
+    {
+      "name": "follow_developer_on_Github",
+      "value": "在 Github 上关注开发者"
+    },
+    {
+      "name": "follow_or_contact_developer",
+      "value": "关注或联系开发者"
+    },
+    {
+      "name": "follow_system",
+      "value": "跟随系统"
+    },
+    {
+      "name": "follow_system_font_scale",
+      "value": "跟随系统字体缩放"
+    },
+    {
+      "name": "follow_us",
+      "value": "关注我们"
+    },
+    {
+      "name": "follow_user_interface",
+      "value": "跟随用户界面"
+    },
+    {
+      "name": "font_weight",
+      "value": "字体粗细"
+    },
+    {
+      "name": "format",
+      "value": "格式"
+    },
+    {
+      "name": "from_album",
+      "value": "出自专辑"
+    },
+    {
+      "name": "front_cover",
+      "value": "封面"
+    },
+    {
+      "name": "get_album_art_when_embedded_cover_art_is_not_available",
+      "value": "当无法获取内嵌封面时尝试获取同文件夹专辑封面"
+    },
+    {
+      "name": "github_salt_player_source",
+      "value": "访问 SaltPlayerSource 获取最新版本，查看最新动态与分享"
+    },
+    {
+      "name": "guess_you_are_looking_for",
+      "value": "猜你在找"
+    },
+    {
+      "name": "hd_custom_background_cover",
+      "value": "高清自定义背景图片"
+    },
+    {
+      "name": "hello",
+      "value": "你好"
+    },
+    {
+      "name": "help",
+      "value": "帮助"
+    },
+    {
+      "name": "help_and_feedback",
+      "value": "帮助与反馈"
+    },
+    {
+      "name": "help_document",
+      "value": "帮助文档"
+    },
+    {
+      "name": "help_translation",
+      "value": "帮助翻译"
+    },
+    {
+      "name": "hidden_songs",
+      "value": "被隐藏的歌曲"
+    },
+    {
+      "name": "hidden_songs_and_folders",
+      "value": "隐藏的歌曲和文件夹"
+    },
+    {
+      "name": "hide",
+      "value": "隐藏"
+    },
+    {
+      "name": "hide_folder",
+      "value": "隐藏文件夹"
+    },
+    {
+      "name": "hide_folder_intro",
+      "value": "是否要隐藏文件夹 %s 及其子文件夹下的所有歌曲？"
+    },
+    {
+      "name": "hide_lyrics_screen_control_panel",
+      "value": "隐藏歌词界面控制面板"
+    },
+    {
+      "name": "hide_on_playback_screen",
+      "value": "在播放界面隐藏"
+    },
+    {
+      "name": "hide_song_s",
+      "value": "确定要隐藏此歌曲 %s 吗？这会将此歌曲移出音乐库，并会丢失相关的播放记录等"
+    },
+    {
+      "name": "hide_status_bar",
+      "value": "隐藏状态栏"
+    },
+    {
+      "name": "hires_logo_in_the_lower_left_corner_of_album_cover_of_customized_play_screen",
+      "value": "自定义播放界面专辑封面左下角 Hi-Res LOGO"
+    },
+    {
+      "name": "hires_logo_in_the_lower_left_corner_of_album_cover_of_customized_play_screen_tip",
+      "value": "选择自己喜欢的小图标（仅方形播放界面生效），不推荐使用过大的图片文件"
+    },
+    {
+      "name": "history",
+      "value": "历史"
+    },
+    {
+      "name": "ignore_media_store_cover",
+      "value": "忽略媒体库封面"
+    },
+    {
+      "name": "ignore_media_store_cover_explain",
+      "value": "❗此功能不建议开启，若出现封面不匹配的情况请使用音乐标签正确编辑【标题】、【专辑】和【专辑艺术家】这三个标签，并设定正确的封面。歌曲封面加载忽略系统媒体库封面，这可能会提高封面质量和支持同专辑不同封面的特性，会严重降低加载速度"
+    },
+    {
+      "name": "image_cache",
+      "value": "图片缓存"
+    },
+    {
+      "name": "immersion_mode",
+      "value": "沉浸模式"
+    },
+    {
+      "name": "immersion_mode_explain",
+      "value": "隐藏状态栏并在播放界面仅保留专辑封面、歌词以及基本操控按钮，带来沉浸体验。还可以通过在播放界面长按播放暂停按钮来开启或关闭沉浸模式"
+    },
+    {
+      "name": "immersion_mode_on",
+      "value": "沉浸模式已开启"
+    },
+    {
+      "name": "immersion_mode_off",
+      "value": "沉浸模式已关闭"
+    },
+    {
+      "name": "import_playlist",
+      "value": "导入歌单"
+    },
+    {
+      "name": "important",
+      "value": "重要"
+    },
+    {
+      "name": "unsupported_non_txt_playlist_file",
+      "value": "不支持非txt格式歌单文件"
+    },
+    {
+      "name": "initial_sample_rate",
+      "value": "初始化采样率"
+    },
+    {
+      "name": "ink_screen_mode",
+      "value": "墨水屏模式"
+    },
+    {
+      "name": "intelligent_filter",
+      "value": "智能过滤"
+    },
+    {
+      "name": "intelligent_filter_sub",
+      "value": "智能过滤掉一些音频文件"
+    },
+    {
+      "name": "internal_storage",
+      "value": "内部存储"
+    },
+    {
+      "name": "introduction",
+      "value": "介绍"
+    },
+    {
+      "name": "irregular_cover_allowed",
+      "value": "允许不规则封面"
+    },
+    {
+      "name": "join_qq_channel",
+      "value": "加入 QQ 频道"
+    },
+    {
+      "name": "karaoke_lyrics_animation_compatibility_strategy",
+      "value": "卡拉 OK（逐字）歌词动画兼容策略"
+    },
+    {
+      "name": "kbps",
+      "value": "千比特每秒"
+    },
+    {
+      "name": "keyboard_shortcuts",
+      "value": "键盘快捷键"
+    },
+    {
+      "name": "keyboard_shortcuts_intro",
+      "value": "此功能仅当 Salt Player 界面在前台时可用"
+    },
+    {
+      "name": "laboratory",
+      "value": "实验室"
+    },
+    {
+      "name": "laboratory_intro",
+      "value": "欢迎使用椒盐音乐实验室，这里的功能并非稳定仅供体验，且可能随时被移除"
+    },
+    {
+      "name": "language",
+      "value": "语言"
+    },
+    {
+      "name": "language_settings_intro",
+      "value": "选择语言、帮助翻译"
+    },
+    {
+      "name": "left_and_right_position",
+      "value": "左右位置"
+    },
+    {
+      "name": "light",
+      "value": "浅色"
+    },
+    {
+      "name": "local_music",
+      "value": "本地"
+    },
+    {
+      "name": "local_playlist",
+      "value": "本地歌单"
+    },
+    {
+      "name": "locate_the_currently_playing_song",
+      "value": "定位当前播放歌曲"
+    },
+    {
+      "name": "lock_desktop_lyrics",
+      "value": "锁定桌面歌词"
+    },
+    {
+      "name": "lock_screen",
+      "value": "锁屏显示"
+    },
+    {
+      "name": "login",
+      "value": "登录"
+    },
+    {
+      "name": "logout",
+      "value": "退出登录"
+    },
+    {
+      "name": "look_at_the_help",
+      "value": "看看帮助吧"
+    },
+    {
+      "name": "lyricist",
+      "value": "作词"
+    },
+    {
+      "name": "lyrics",
+      "value": "歌词"
+    },
+    {
+      "name": "lyrics_edit",
+      "value": "歌词编辑"
+    },
+    {
+      "name": "lyrics_screen",
+      "value": "歌词界面"
+    },
+    {
+      "name": "material",
+      "value": "材质"
+    },
+    {
+      "name": "lyrics_settings",
+      "value": "歌词设置"
+    },
+    {
+      "name": "lyrics_settings_intro",
+      "value": "车载歌词、状态栏歌词、桌面歌词等"
+    },
+    {
+      "name": "lyrics_text_left_aligned",
+      "value": "歌词文本居左对齐"
+    },
+    {
+      "name": "lyrics_text_left_aligned_info",
+      "value": "未开启时候将保持在设定的歌词宽度内居中对齐"
+    },
+    {
+      "name": "lyrics_view_blur",
+      "value": "歌词视图模糊"
+    },
+    {
+      "name": "lyrics_view_blur_min_api_hint",
+      "value": "仅支持系统版本 12 及以上的设备"
+    },
+    {
+      "name": "lyrics_view_text_align_center",
+      "value": "歌词视图文本居中对齐"
+    },
+    {
+      "name": "lyrics_view_text_bold",
+      "value": "歌词视图文本加粗"
+    },
+    {
+      "name": "lyrics_view_text_size",
+      "value": "歌词视图字体大小"
+    },
+    {
+      "name": "manage",
+      "value": "管理"
+    },
+    {
+      "name": "manage_external_storage_permission",
+      "value": "管理外部存储权限"
+    },
+    {
+      "name": "marking_and_promotion",
+      "value": "宣发"
+    },
+    {
+      "name": "max_audio_concert_hall_atmosphere",
+      "value": "MAX Audio 音乐厅氛围"
+    },
+    {
+      "name": "media_decoding_provided_by_this_device",
+      "value": "此设备提供的媒体解码"
+    },
+    {
+      "name": "media_extractor_adaptive_audio",
+      "value": "MediaExtractor 自适应音频"
+    },
+    {
+      "name": "media_router",
+      "value": "媒体路由"
+    },
+    {
+      "name": "media_source",
+      "value": "媒体来源"
+    },
+    {
+      "name": "meizu_flyme_features",
+      "value": "魅族 Flyme 特色功能"
+    },
+    {
+      "name": "meizu_status_bar_lyrics",
+      "value": "魅族状态栏歌词"
+    },
+    {
+      "name": "memory",
+      "value": "Memory"
+    },
+    {
+      "name": "menu",
+      "value": "菜单"
+    },
+    {
+      "name": "mini_lyrics_in_playback_screen",
+      "value": "播放界面迷你歌词"
+    },
+    {
+      "name": "minimum_number_of_columns",
+      "value": "最小列数"
+    },
+    {
+      "name": "miui_status_bar_lyrics",
+      "value": "MIUI 状态栏歌词"
+    },
+    {
+      "name": "miui_status_bar_lyrics_intro",
+      "value": "启用此选项前需确保已安装此 Xposed 框架模块，详情请访问下方链接"
+    },
+    {
+      "name": "mixer",
+      "value": "混音"
+    },
+    {
+      "name": "more",
+      "value": "更多"
+    },
+    {
+      "name": "move_down",
+      "value": "向下移动"
+    },
+    {
+      "name": "move_up",
+      "value": "向上移动"
+    },
+    {
+      "name": "multiple_choice",
+      "value": "多选"
+    },
+    {
+      "name": "music",
+      "value": "音乐"
+    },
+    {
+      "name": "music_library",
+      "value": "音乐库"
+    },
+    {
+      "name": "my",
+      "value": "我的"
+    },
+    {
+      "name": "my_favorite_songs",
+      "value": "我喜欢的歌曲"
+    },
+    {
+      "name": "native_file_manager",
+      "value": "原生文件管理器"
+    },
+    {
+      "name": "native_output",
+      "value": "原生输出"
+    },
+    {
+      "name": "native_output_intro",
+      "value": "在 Android 8.0 及更新系统启用 AAudio 输出而在低于 Android 8.0 系统启用 OpenSL ES 输出，相较于音轨输出可能会带来更低的延迟和更好的音质表现，但将无法配合使用系统均衡器或者其他音效软件以及带来更高的电量消耗"
+    },
+    {
+      "name": "new_playlist",
+      "value": "新建歌单"
+    },
+    {
+      "name": "next",
+      "value": "下一首"
+    },
+    {
+      "name": "next_play",
+      "value": "下一首播放"
+    },
+    {
+      "name": "nickname",
+      "value": "昵称"
+    },
+    {
+      "name": "no_description",
+      "value": "暂无描述"
+    },
+    {
+      "name": "no_floating_window_permission_tip",
+      "value": "软件未取得权限，需要手动前往设置给予本软件悬浮窗权限"
+    },
+    {
+      "name": "no_lyrics",
+      "value": "暂无歌词"
+    },
+    {
+      "name": "no_playlists_have_been_created",
+      "value": "未创建任何歌单"
+    },
+    {
+      "name": "no_song_playing",
+      "value": "无播放歌曲"
+    },
+    {
+      "name": "none",
+      "value": "无"
+    },
+    {
+      "name": "notification",
+      "value": "通知"
+    },
+    {
+      "name": "notification_bar_lyrics",
+      "value": "通知栏歌词"
+    },
+    {
+      "name": "notification_of_salt_player",
+      "value": "音乐媒体通知"
+    },
+    {
+      "name": "notification_screen_warning",
+      "value": "Salt Player 在系统音乐通知栏或控制中心音乐面板中显示的可操作按钮的排序由当前系统设定，可能被默认折叠为 3 个，可能播放暂停按钮在最前也可能播放暂停按钮在中间。当仅开启了一个 Salt Player 可控显示按钮时，此按钮可能被布局到不确定位置"
+    },
+    {
+      "name": "number_of_characters_is_too_long",
+      "value": "字符数过长"
+    },
+    {
+      "name": "off",
+      "value": "关"
+    },
+    {
+      "name": "official_website",
+      "value": "官方网站"
+    },
+    {
+      "name": "on",
+      "value": "开"
+    },
+    {
+      "name": "only_android_d_and_later_systems_are_supported",
+      "value": "仅支持 Android %d 及更新系统版本"
+    },
+    {
+      "name": "open_sl_es_intro",
+      "value": "原生高性能低延迟输出，稳定性高，但无法配合使用系统音效以及第三方音效软件"
+    },
+    {
+      "name": "open_source_introduction",
+      "value": "开源介绍"
+    },
+    {
+      "name": "open_source_license",
+      "value": "开放源代码许可"
+    },
+    {
+      "name": "optional_updates",
+      "value": "可选更新"
+    },
+    {
+      "name": "options_for_audiophile",
+      "value": "音频发烧友选项"
+    },
+    {
+      "name": "others",
+      "value": "其他"
+    },
+    {
+      "name": "output",
+      "value": "输出"
+    },
+    {
+      "name": "panel",
+      "value": "面板"
+    },
+    {
+      "name": "participating_artists",
+      "value": "参与创作的艺术家"
+    },
+    {
+      "name": "password",
+      "value": "密码"
+    },
+    {
+      "name": "path",
+      "value": "路径"
+    },
+    {
+      "name": "pause_music",
+      "value": "暂停音乐"
+    },
+    {
+      "name": "personal_profile",
+      "value": "个人介绍"
+    },
+    {
+      "name": "pitch",
+      "value": "音高"
+    },
+    {
+      "name": "play_all",
+      "value": "播放全部(%d)"
+    },
+    {
+      "name": "play_music",
+      "value": "播放音乐"
+    },
+    {
+      "name": "play_preferences",
+      "value": "播放偏好"
+    },
+    {
+      "name": "play_queue",
+      "value": "播放队列"
+    },
+    {
+      "name": "play_queue_d",
+      "value": "播放队列（%d）"
+    },
+    {
+      "name": "play_queue_is_empty",
+      "value": "播放队列为空"
+    },
+    {
+      "name": "play_the_selected_queue",
+      "value": "播放选中队列"
+    },
+    {
+      "name": "playback_screen",
+      "value": "播放界面"
+    },
+    {
+      "name": "playback_screen_for_car",
+      "value": "车机播放界面"
+    },
+    {
+      "name": "playback_screen_for_car_intro",
+      "value": "仅激活平板模式时可用"
+    },
+    {
+      "name": "playback_screen_theme",
+      "value": "播放界面主题"
+    },
+    {
+      "name": "played_times",
+      "value": "播放次数"
+    },
+    {
+      "name": "player",
+      "value": "播放器"
+    },
+    {
+      "name": "player_configuration",
+      "value": "播放器配置"
+    },
+    {
+      "name": "player_theme",
+      "value": "播放器主题"
+    },
+    {
+      "name": "player_theme_dark",
+      "value": "✨深色流光✨"
+    },
+    {
+      "name": "player_theme_light",
+      "value": "🍉浅色流光🍨（2021 💕 夏日留念）"
+    },
+    {
+      "name": "player_ui_keep_screen_on",
+      "value": "播放界面保持屏幕唤醒"
+    },
+    {
+      "name": "playlist",
+      "value": "歌单"
+    },
+    {
+      "name": "playlist_name_must_not_be_empty",
+      "value": "歌单名称不得为空"
+    },
+    {
+      "name": "playlist_number",
+      "value": "播放列表（%d）"
+    },
+    {
+      "name": "playlist_recommend",
+      "value": "歌单推荐"
+    },
+    {
+      "name": "playlists",
+      "value": "歌单"
+    },
+    {
+      "name": "position",
+      "value": "位置"
+    },
+    {
+      "name": "pre_amp",
+      "value": "前置放大器"
+    },
+    {
+      "name": "previous",
+      "value": "上一首"
+    },
+    {
+      "name": "privacy_policy",
+      "value": "隐私协议"
+    },
+    {
+      "name": "production",
+      "value": "出品"
+    },
+    {
+      "name": "project_collaboration",
+      "value": "项目协力"
+    },
+    {
+      "name": "project_initiation_date_and_location",
+      "value": "2026 年 4 月 · 中国杭州"
+    },
+    {
+      "name": "publisher",
+      "value": "发行商"
+    },
+    {
+      "name": "quality",
+      "value": "品质"
+    },
+    {
+      "name": "random_play",
+      "value": "随机播放"
+    },
+    {
+      "name": "random_play_d",
+      "value": "随机播放(%d)"
+    },
+    {
+      "name": "random_playback_mode",
+      "value": "随机播放模式"
+    },
+    {
+      "name": "readable_check_items",
+      "value": "可读取检查项"
+    },
+    {
+      "name": "refresh",
+      "value": "刷新"
+    },
+    {
+      "name": "refresh_and_restart_the_main_screen",
+      "value": "刷新并重启主界面"
+    },
+    {
+      "name": "register",
+      "value": "注册"
+    },
+    {
+      "name": "remove",
+      "value": "移除"
+    },
+    {
+      "name": "remove_from_music_library",
+      "value": "从音乐库移除"
+    },
+    {
+      "name": "remove_from_playback_queue",
+      "value": "从播放队列中移除"
+    },
+    {
+      "name": "remove_from_the_playlist",
+      "value": "从此歌单中移除"
+    },
+    {
+      "name": "remove_the_song",
+      "value": "移除这首歌曲"
+    },
+    {
+      "name": "repeat_one_playback_mode",
+      "value": "单曲循环播放模式"
+    },
+    {
+      "name": "restore_audio_settings_intro",
+      "value": "将还原以下默认值，完成后将自动重新启动软件（部分音频设置相关的修改将在切换歌曲后生效）"
+    },
+    {
+      "name": "restore_some_defaults_on_this_page",
+      "value": "还原本页某些默认值"
+    },
+    {
+      "name": "return_to_desktop",
+      "value": "返回桌面"
+    },
+    {
+      "name": "salt_audio_effect",
+      "value": "椒盐音效"
+    },
+    {
+      "name": "salt_player_official",
+      "value": "椒盐音乐官方"
+    },
+    {
+      "name": "salt_player_pro",
+      "value": "Salt Player Pro"
+    },
+    {
+      "name": "salt_player_smart_router",
+      "value": "椒盐妙播"
+    },
+    {
+      "name": "salt_selected",
+      "value": "（已选择）"
+    },
+    {
+      "name": "sample_rate",
+      "value": "采样率"
+    },
+    {
+      "name": "sample_rate_range_supported_by_audio_track_of_this_system",
+      "value": "此系统 AudioTrack 支持的采样率范围"
+    },
+    {
+      "name": "save",
+      "value": "保存"
+    },
+    {
+      "name": "save_successfully",
+      "value": "保存成功"
+    },
+    {
+      "name": "save_to_the_media_library",
+      "value": "保存到媒体库"
+    },
+    {
+      "name": "scan_music",
+      "value": "扫描音乐"
+    },
+    {
+      "name": "scanning_in_progress_please_wait",
+      "value": "正在扫描请等待"
+    },
+    {
+      "name": "search",
+      "value": "搜索"
+    },
+    {
+      "name": "search_for_online_music",
+      "value": "搜索在线音乐"
+    },
+    {
+      "name": "search_for_s_on_the_internet",
+      "value": "在互联网上搜索%s"
+    },
+    {
+      "name": "search_songs_hint",
+      "value": "在 %d 首歌曲中搜索"
+    },
+    {
+      "name": "see_lyrics_help",
+      "value": "查看歌词帮助"
+    },
+    {
+      "name": "select_all",
+      "value": "全选"
+    },
+    {
+      "name": "select_image",
+      "value": "选择图片"
+    },
+    {
+      "name": "self_check_items",
+      "value": "自行检查项"
+    },
+    {
+      "name": "send",
+      "value": "发送"
+    },
+    {
+      "name": "service",
+      "value": "服务"
+    },
+    {
+      "name": "settings",
+      "value": "设置"
+    },
+    {
+      "name": "share",
+      "value": "分享"
+    },
+    {
+      "name": "show_close_button",
+      "value": "显示关闭按钮"
+    },
+    {
+      "name": "show_close_button_intro",
+      "value": "在某些系统上可能没有显式关闭音乐软件进程的通知栏操作，此按钮可以强制终止 Salt Player 进程，在早期 MIUI 系统上可能存在通知残留的问题以及在特定的系统界面可能无法立刻感知到软件进程状态变化的问题"
+    },
+    {
+      "name": "show_desktop_lyrics_button",
+      "value": "显示桌面歌词按钮"
+    },
+    {
+      "name": "show_desktop_lyrics_button_intro",
+      "value": "当 Salt Player 播放时，在系统音乐通知栏或控制中心音乐面板显示 Salt Player 的桌面歌词按钮，桌面歌词功能需要悬浮窗权限"
+    },
+    {
+      "name": "single_column_playlist",
+      "value": "单列歌单"
+    },
+    {
+      "name": "size",
+      "value": "大小"
+    },
+    {
+      "name": "skip_wrong_song",
+      "value": "跳过播放错误歌曲"
+    },
+    {
+      "name": "sleep_timer",
+      "value": "睡眠定时"
+    },
+    {
+      "name": "sleep_timer_stopped",
+      "value": "睡眠定时被停止"
+    },
+    {
+      "name": "sliding_animation_of_songs_in_the_playlist",
+      "value": "歌单歌曲滑动动画"
+    },
+    {
+      "name": "some_image_resources_from",
+      "value": "部分图片资源来自"
+    },
+    {
+      "name": "some_information",
+      "value": "一些信息"
+    },
+    {
+      "name": "song",
+      "value": "歌曲"
+    },
+    {
+      "name": "song_clips",
+      "value": "歌曲片段"
+    },
+    {
+      "name": "song_comment",
+      "value": "歌曲评论"
+    },
+    {
+      "name": "song_id",
+      "value": "歌曲 ID"
+    },
+    {
+      "name": "song_info",
+      "value": "歌曲信息"
+    },
+    {
+      "name": "song_list",
+      "value": "歌曲列表"
+    },
+    {
+      "name": "song_settings_intro",
+      "value": "状态栏歌词、网络歌词、专辑封面、专辑信息等"
+    },
+    {
+      "name": "songs",
+      "value": "歌曲"
+    },
+    {
+      "name": "sort",
+      "value": "排序"
+    },
+    {
+      "name": "sort_album_track",
+      "value": "专辑（音轨）"
+    },
+    {
+      "name": "sort_artist_album",
+      "value": "艺术家（专辑）"
+    },
+    {
+      "name": "sort_by_duration",
+      "value": "时长（短→长）"
+    },
+    {
+      "name": "sort_by_duration_desc",
+      "value": "时长（长→短）"
+    },
+    {
+      "name": "sort_folder_title",
+      "value": "文件夹（标题）"
+    },
+    {
+      "name": "source",
+      "value": "来源"
+    },
+    {
+      "name": "source_address",
+      "value": "资源地址"
+    },
+    {
+      "name": "source_audio_info",
+      "value": "源音频信息"
+    },
+    {
+      "name": "source_code",
+      "value": "源代码"
+    },
+    {
+      "name": "source_of_lyrics",
+      "value": "歌词来源"
+    },
+    {
+      "name": "space_bar_play_or_pause_music",
+      "value": "空格键播放 / 暂停音乐"
+    },
+    {
+      "name": "special_thanks",
+      "value": "特别感谢"
+    },
+    {
+      "name": "sponsor",
+      "value": "赞赏"
+    },
+    {
+      "name": "src",
+      "value": "重采样（SRC）"
+    },
+    {
+      "name": "srl_component_falsify",
+      "value": "\"%s 虚假区域\n代表运行时拖动的高度【%.1fdp】 \n而不会显示任何东西\""
+    },
+    {
+      "name": "srl_content_empty",
+      "value": "SmartRefreshLayout中没有找到内容视图。您是否忘记在xml布局文件中添加？"
+    },
+    {
+      "name": "standard_music_player",
+      "value": "标准音乐播放器"
+    },
+    {
+      "name": "start",
+      "value": "开始"
+    },
+    {
+      "name": "start_scan",
+      "value": "开始扫描"
+    },
+    {
+      "name": "rescan_all",
+      "value": "重新扫描"
+    },
+    {
+      "name": "startup_and_backend",
+      "value": "启动与后台"
+    },
+    {
+      "name": "state",
+      "value": "状态"
+    },
+    {
+      "name": "statistics",
+      "value": "统计"
+    },
+    {
+      "name": "status_bar_lyrics",
+      "value": "状态栏歌词"
+    },
+    {
+      "name": "status_bar_lyrics_intro",
+      "value": "系统级状态栏歌词，注意此需要系统支持，如魅族 Flyme 等（⚠️注意：若系统不支持，请将其保持关闭状态，不然可能会导致媒体通知显示异常）"
+    },
+    {
+      "name": "status_bar_lyrics_not_show_translation",
+      "value": "状态栏歌词不显示翻译"
+    },
+    {
+      "name": "status_bar_lyrics_not_show_translation_info",
+      "value": "歌词翻译通过同时间戳识别"
+    },
+    {
+      "name": "stop",
+      "value": "停止"
+    },
+    {
+      "name": "storage_occupancy",
+      "value": "存储占用"
+    },
+    {
+      "name": "style",
+      "value": "样式"
+    },
+    {
+      "name": "subscribe_on_telegram",
+      "value": "在 Telegram 上订阅 Salt Player 开发进度"
+    },
+    {
+      "name": "success",
+      "value": "成功"
+    },
+    {
+      "name": "successfully_added_to_next_play",
+      "value": "成功添加到下一首播放"
+    },
+    {
+      "name": "successfully_added_to_playlist",
+      "value": "已添加到歌单"
+    },
+    {
+      "name": "swipe_down_here_to_return_to_the_playback_screen",
+      "value": "此处向下轻扫以返回播放界面"
+    },
+    {
+      "name": "system_accessibility_settings",
+      "value": "系统无障碍设置"
+    },
+    {
+      "name": "system_audio_effect",
+      "value": "其他音效"
+    },
+    {
+      "name": "system_equalizer",
+      "value": "系统均衡器"
+    },
+    {
+      "name": "system_language",
+      "value": "系统语言"
+    },
+    {
+      "name": "system_level_status_bar_lyrics",
+      "value": "系统级状态栏歌词"
+    },
+    {
+      "name": "system_recommended_output_sample_rate",
+      "value": "系统推荐输出采样率"
+    },
+    {
+      "name": "system_support_required",
+      "value": "需要系统支持"
+    },
+    {
+      "name": "tablet_mode",
+      "value": "平板模式"
+    },
+    {
+      "name": "tablet_mode_intro",
+      "value": "源自 Salt Player（原椒盐音乐）一直以来出色的状态栏、导航栏适配，并运用新技术构建自适应界面，为 Salt Player（原椒盐音乐）5.0（愿逐月华流照君）版本设计了三款不同的布局，带来更加完美的体验"
+    },
+    {
+      "name": "technical_support",
+      "value": "技术支持"
+    },
+    {
+      "name": "terminate_app_process",
+      "value": "终止 App 进程"
+    },
+    {
+      "name": "terms_of_use",
+      "value": "软件使用条款"
+    },
+    {
+      "name": "testing",
+      "value": "测试"
+    },
+    {
+      "name": "thanks",
+      "value": "感谢"
+    },
+    {
+      "name": "theme",
+      "value": "主题"
+    },
+    {
+      "name": "title",
+      "value": "标题"
+    },
+    {
+      "name": "title_desc",
+      "value": "标题降序"
+    },
+    {
+      "name": "title_not_empty",
+      "value": "标题不可为空"
+    },
+    {
+      "name": "top_list",
+      "value": "排行榜"
+    },
+    {
+      "name": "translation",
+      "value": "翻译"
+    },
+    {
+      "name": "translators",
+      "value": "翻译人员"
+    },
+    {
+      "name": "true_random_mode",
+      "value": "真随机模式"
+    },
+    {
+      "name": "true_random_mode_intro",
+      "value": "每次上一首或下一首都将始终从现有播放队列中随机选取一项，注意开启此功能后迷你播放条左右滑动显示的上一首或下一首将不准确"
+    },
+    {
+      "name": "type",
+      "value": "类型"
+    },
+    {
+      "name": "unable_to_start_native_file_manager",
+      "value": "无法启动原生文件管理器"
+    },
+    {
+      "name": "unable_to_start_native_file_manager_intro",
+      "value": "\"软件使用原生文件管理器进行对文件夹的授权\n1. 检查是否有禁用原生文件管理器（具体名称可能在不同原始设备制造商系统上有所不同，包名唯一：com.google.android.documentsui）\n2. 可能是原生文件管理器（DocumentsUI，Android 系统内置应用）被原始设备制造商（OEM）进行了可选择的替换，多见于一些车机设备\n* 原生文件管理器可在谷歌 Play 商店接受补丁\""
+    },
+    {
+      "name": "unable_to_start_system_accessibility_settings",
+      "value": "无法启动系统无障碍设置"
+    },
+    {
+      "name": "unknown",
+      "value": "未知"
+    },
+    {
+      "name": "unknown_album_artist",
+      "value": "未知专辑艺术家"
+    },
+    {
+      "name": "unknown_album_title",
+      "value": "未知专辑标题"
+    },
+    {
+      "name": "unknown_artist",
+      "value": "未知艺术家"
+    },
+    {
+      "name": "unknown_error",
+      "value": "未知错误"
+    },
+    {
+      "name": "up_and_down_position",
+      "value": "上下位置"
+    },
+    {
+      "name": "update",
+      "value": "刷新"
+    },
+    {
+      "name": "update_log",
+      "value": "更新日志"
+    },
+    {
+      "name": "update_software",
+      "value": "更新软件"
+    },
+    {
+      "name": "upload",
+      "value": "上传"
+    },
+    {
+      "name": "usb_disk",
+      "value": "U 盘"
+    },
+    {
+      "name": "usb_storage",
+      "value": "USB 存储"
+    },
+    {
+      "name": "use_android_media_decoder",
+      "value": "使用系统媒体解码器"
+    },
+    {
+      "name": "use_android_media_decoder_intro",
+      "value": "当音频为本软件内置解码不支持的格式时使用 Android 平台提供的媒体解码器和特定于此设备（一般由厂家或者芯片制造商提供）的媒体解码器解码此音频"
+    },
+    {
+      "name": "use_android_media_store",
+      "value": "使用鸿蒙媒体库"
+    },
+    {
+      "name": "use_better",
+      "value": "更好地使用"
+    },
+    {
+      "name": "use_classic_lyrics_view",
+      "value": "使用经典歌词视图"
+    },
+    {
+      "name": "use_music_tag_app_editing",
+      "value": "使用音乐标签应用编辑…"
+    },
+    {
+      "name": "user_interface",
+      "value": "用户界面"
+    },
+    {
+      "name": "user_interface_intro",
+      "value": "播放界面主题、沉浸模式等"
+    },
+    {
+      "name": "v3_audio_effect",
+      "value": "V3 音效"
+    },
+    {
+      "name": "v3_reverb",
+      "value": "V3 混响"
+    },
+    {
+      "name": "version",
+      "value": "%s(%d)"
+    },
+    {
+      "name": "video",
+      "value": "视频"
+    },
+    {
+      "name": "videos",
+      "value": "视频"
+    },
+    {
+      "name": "volume_balance",
+      "value": "音量平衡"
+    },
+    {
+      "name": "volume_balance_tip",
+      "value": "回放增益（Replay Gain），扫描音频 REPLAYGAIN_TRACK_GAIN 和 REPLAYGAIN_ALBUM_GAIN 标签，并根据此值调整音量大小。可以通过一些软件调整，如使用 foobar 2000 -> Scan per-file track gain 等方式 。此选项的改变效果将在切换歌曲或重新播放后生效"
+    },
+    {
+      "name": "wallpaper_of_main_interface_info",
+      "value": "选择合适的背景色有助于更清晰的显示，除了跟随系统主题外不建议将背景色设定为跟随系统"
+    },
+    {
+      "name": "wallpaper_of_main_screen",
+      "value": "主界面壁纸"
+    },
+    {
+      "name": "wallpaper_of_player_screen",
+      "value": "播放界面壁纸"
+    },
+    {
+      "name": "warning",
+      "value": "⚠️警告"
+    },
+    {
+      "name": "web_dav_settings",
+      "value": "WebDAV 设置"
+    },
+    {
+      "name": "whether_to_clear_the_current_playback_queue",
+      "value": "是否清空当前播放队列？"
+    },
+    {
+      "name": "width",
+      "value": "宽度"
+    },
+    {
+      "name": "windows_subsystem_for_android",
+      "value": "适用于 Android™ 的 Windows 子系统"
+    },
+    {
+      "name": "xposed_lyric_getter_tip",
+      "value": "⚠️启用此功能会自动关闭【系统级状态栏歌词】功能，以保证媒体通知封面正常"
+    },
+    {
+      "name": "xposed_status_bar_lyrics",
+      "value": "Xposed 状态栏歌词"
+    },
+    {
+      "name": "year",
+      "value": "年份"
+    },
+    {
+      "name": "you_need_to_restart_the_app",
+      "value": "你需要重启本应用"
+    },
+    {
+      "name": "zoom_display_size",
+      "value": "显示大小缩放"
+    },
+    {
+      "name": "zoom_display_size_info",
+      "value": "适用于一些大屏车机设备上界面元素显示显示过小不方便操作等其他情况，注意此缩放不是完美的，有些元素暂不支持此特性"
+    },
+    {
+      "name": "zoom_display_size_tip",
+      "value": "⚠️可能存在一些界面无法立刻响应界面显示大小变化，请点击下方重启按钮或手动重启软件"
+    },
+    {
+      "name": "auto_open_playback_label",
+      "value": "启动软件自动打开播放界面"
+    },
+    {
+      "name": "lyrics_3d_effect_label",
+      "value": "立体歌词效果（开发型测试）"
+    },
+    {
+      "name": "get_album_art_warning",
+      "value": "谨慎使用，此功能可能会严重影响图片加载速度，若出现此情况请勿开启此功能并向运营团队反馈"
+    }
+  ]
+}

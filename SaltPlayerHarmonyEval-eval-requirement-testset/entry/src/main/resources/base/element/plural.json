@@ -1,0 +1,17 @@
+{
+  "plural": [
+    {
+      "name": "mtrl_badge_content_description",
+      "value": [
+        {
+          "quantity": "one",
+          "value": "%d new notification"
+        },
+        {
+          "quantity": "other",
+          "value": "%d new notifications"
+        }
+      ]
+    }
+  ]
+}

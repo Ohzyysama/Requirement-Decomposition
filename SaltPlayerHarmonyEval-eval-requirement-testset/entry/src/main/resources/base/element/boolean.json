@@ -1,0 +1,20 @@
+{
+  "boolean": [
+    {
+      "name": "abc_action_bar_embed_tabs",
+      "value": true
+    },
+    {
+      "name": "is_tablet",
+      "value": false
+    },
+    {
+      "name": "mtrl_btn_textappearance_all_caps",
+      "value": true
+    },
+    {
+      "name": "statusBarForeground",
+      "value": true
+    }
+  ]
+}

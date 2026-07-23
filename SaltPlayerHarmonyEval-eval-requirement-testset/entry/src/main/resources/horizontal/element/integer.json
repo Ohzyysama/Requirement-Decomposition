@@ -1,0 +1,12 @@
+{
+  "integer": [
+    {
+      "name": "mtrl_calendar_header_orientation",
+      "value": 0
+    },
+    {
+      "name": "mtrl_calendar_selection_text_lines",
+      "value": 6
+    }
+  ]
+}

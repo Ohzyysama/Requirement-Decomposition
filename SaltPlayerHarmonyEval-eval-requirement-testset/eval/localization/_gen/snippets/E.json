@@ -1,0 +1,110 @@
+[
+  {
+    "arId": "AR-08-01",
+    "title": "创建歌单（名称去空白非空校验、查重）",
+    "anchor": "model/NewPlaylistModel.ets",
+    "message": "feat(playlist): 创建歌单名称校验",
+    "arComment": "// 去除首尾空白后校验非空并与现有歌单名查重",
+    "arSymbol": "validateNewPlaylistNameE",
+    "arCode": "function validateNewPlaylistNameE(raw: string, existing: string[]): string {\n  const name: string = raw.trim();\n  if (name.length === 0) {\n    return 'empty';\n  }\n  for (let i = 0; i < existing.length; i++) {\n    if (existing[i].trim() === name) {\n      return 'duplicate';\n    }\n  }\n  return 'ok';\n}",
+    "distractorComment": "// 将秒数格式化为 mm:ss 时间文本",
+    "distractorSymbol": "formatDurationLabelE",
+    "distractorCode": "function formatDurationLabelE(totalSeconds: number): string {\n  const secs: number = Math.max(0, Math.floor(totalSeconds));\n  const minutes: number = Math.floor(secs / 60);\n  const remain: number = secs % 60;\n  const mm: string = minutes < 10 ? '0' + minutes : '' + minutes;\n  const ss: string = remain < 10 ? '0' + remain : '' + remain;\n  return mm + ':' + ss;\n}"
+  },
+  {
+    "arId": "AR-08-02",
+    "title": "重命名歌单",
+    "anchor": "model/PlaylistModel.ets",
+    "message": "feat(playlist): 重命名歌单",
+    "arComment": "// 按 id 找到目标歌单并写入去空白后的新名称",
+    "arSymbol": "renamePlaylistByIdE",
+    "arCode": "function renamePlaylistByIdE(lists: Map<number, string>, id: number, newName: string): boolean {\n  const name: string = newName.trim();\n  if (name.length === 0) {\n    return false;\n  }\n  if (!lists.has(id)) {\n    return false;\n  }\n  lists.set(id, name);\n  return true;\n}",
+    "distractorComment": "// 计算购物车商品总价（含折扣）",
+    "distractorSymbol": "computeCartTotalE",
+    "distractorCode": "function computeCartTotalE(prices: number[], discount: number): number {\n  let sum: number = 0;\n  for (let i = 0; i < prices.length; i++) {\n    sum += prices[i];\n  }\n  const rate: number = Math.min(1, Math.max(0, discount));\n  return Math.round(sum * (1 - rate) * 100) / 100;\n}"
+  },
+  {
+    "arId": "AR-08-03",
+    "title": "删除歌单",
+    "anchor": "model/PlaylistModel.ets",
+    "message": "feat(playlist): 删除歌单",
+    "arComment": "// 移除指定 id 的歌单并返回剩余歌单列表",
+    "arSymbol": "deletePlaylistByIdE",
+    "arCode": "function deletePlaylistByIdE(lists: Array<Record<string, number>>, id: number): Array<Record<string, number>> {\n  const result: Array<Record<string, number>> = [];\n  for (let i = 0; i < lists.length; i++) {\n    const cur: Record<string, number> = lists[i];\n    if (cur.id !== id) {\n      result.push(cur);\n    }\n  }\n  return result;\n}",
+    "distractorComment": "// 判断给定年份是否为闰年",
+    "distractorSymbol": "isLeapYearE",
+    "distractorCode": "function isLeapYearE(year: number): boolean {\n  if (year % 4 !== 0) {\n    return false;\n  }\n  if (year % 100 !== 0) {\n    return true;\n  }\n  return year % 400 === 0;\n}"
+  },
+  {
+    "arId": "AR-08-04",
+    "title": "歌曲加入/移出歌单（去重、维护顺序）",
+    "anchor": "model/MusicDatabase.ets",
+    "message": "feat(playlist): 歌曲加入移出歌单",
+    "arComment": "// 加入时去重追加到末尾，移出时保留原有顺序",
+    "arSymbol": "toggleSongInPlaylistE",
+    "arCode": "function toggleSongInPlaylistE(songIds: number[], songId: number, add: boolean): number[] {\n  const next: number[] = [];\n  let found: boolean = false;\n  for (let i = 0; i < songIds.length; i++) {\n    if (songIds[i] === songId) {\n      found = true;\n      if (add) {\n        next.push(songIds[i]);\n      }\n    } else {\n      next.push(songIds[i]);\n    }\n  }\n  if (add && !found) {\n    next.push(songId);\n  }\n  return next;\n}",
+    "distractorComment": "// 统计文本中各字符出现的次数",
+    "distractorSymbol": "countCharFrequencyE",
+    "distractorCode": "function countCharFrequencyE(text: string): Map<string, number> {\n  const freq: Map<string, number> = new Map<string, number>();\n  for (let i = 0; i < text.length; i++) {\n    const ch: string = text.charAt(i);\n    const prev: number = freq.has(ch) ? (freq.get(ch) as number) : 0;\n    freq.set(ch, prev + 1);\n  }\n  return freq;\n}"
+  },
+  {
+    "arId": "AR-08-05",
+    "title": "歌单导入/导出（序列化为文本行）",
+    "anchor": "model/ImportPlaylistModel.ets",
+    "message": "feat(playlist): 歌单导入导出",
+    "arComment": "// 每首歌序列化为一行 标题|艺术家|路径 的文本",
+    "arSymbol": "serializePlaylistLinesE",
+    "arCode": "function serializePlaylistLinesE(songs: Array<Record<string, string>>): string {\n  const lines: string[] = [];\n  for (let i = 0; i < songs.length; i++) {\n    const s: Record<string, string> = songs[i];\n    const title: string = s.title !== undefined ? s.title : '';\n    const artist: string = s.artist !== undefined ? s.artist : '';\n    const path: string = s.path !== undefined ? s.path : '';\n    lines.push(title + '|' + artist + '|' + path);\n  }\n  return lines.join('\\n');\n}",
+    "distractorComment": "// 将摄氏温度转换为华氏温度",
+    "distractorSymbol": "celsiusToFahrenheitE",
+    "distractorCode": "function celsiusToFahrenheitE(values: number[]): number[] {\n  const out: number[] = [];\n  for (let i = 0; i < values.length; i++) {\n    const f: number = values[i] * 9 / 5 + 32;\n    out.push(Math.round(f * 10) / 10);\n  }\n  return out;\n}"
+  },
+  {
+    "arId": "AR-08-06",
+    "title": "歌单排序",
+    "anchor": "model/PlaylistModel.ets",
+    "message": "feat(playlist): 歌单排序",
+    "arComment": "// 按名称或创建时间对歌单做升序/降序排序",
+    "arSymbol": "sortPlaylistsE",
+    "arCode": "function sortPlaylistsE(lists: Array<Record<string, string | number>>, byTime: boolean, asc: boolean): Array<Record<string, string | number>> {\n  const arr: Array<Record<string, string | number>> = lists.slice();\n  arr.sort((a: Record<string, string | number>, b: Record<string, string | number>): number => {\n    let cmp: number;\n    if (byTime) {\n      cmp = (a.createdAt as number) - (b.createdAt as number);\n    } else {\n      cmp = (a.name as string).localeCompare(b.name as string);\n    }\n    return asc ? cmp : -cmp;\n  });\n  return arr;\n}",
+    "distractorComment": "// 检查括号字符串是否正确配对",
+    "distractorSymbol": "isBalancedBracketsE",
+    "distractorCode": "function isBalancedBracketsE(text: string): boolean {\n  const stack: string[] = [];\n  const pairs: Map<string, string> = new Map<string, string>([[')', '('], [']', '['], ['}', '{']]);\n  for (let i = 0; i < text.length; i++) {\n    const ch: string = text.charAt(i);\n    if (ch === '(' || ch === '[' || ch === '{') {\n      stack.push(ch);\n    } else if (pairs.has(ch)) {\n      if (stack.pop() !== pairs.get(ch)) {\n        return false;\n      }\n    }\n  }\n  return stack.length === 0;\n}"
+  },
+  {
+    "arId": "AR-09-01",
+    "title": "音乐库音质分布与容量统计（按音质分组累加大小/数量）",
+    "anchor": "model/MusicLibraryModel.ets",
+    "message": "feat(library): 音乐库音质分布与容量统计",
+    "arComment": "// 按音质标签分组累加文件数量与字节大小",
+    "arSymbol": "summarizeLibraryQualityE",
+    "arCode": "function summarizeLibraryQualityE(tracks: Array<Record<string, string | number>>): Map<string, Record<string, number>> {\n  const stats: Map<string, Record<string, number>> = new Map<string, Record<string, number>>();\n  for (let i = 0; i < tracks.length; i++) {\n    const q: string = tracks[i].quality as string;\n    const size: number = tracks[i].size as number;\n    if (!stats.has(q)) {\n      stats.set(q, { count: 0, bytes: 0 });\n    }\n    const bucket: Record<string, number> = stats.get(q) as Record<string, number>;\n    bucket.count += 1;\n    bucket.bytes += size;\n  }\n  return stats;\n}",
+    "distractorComment": "// 计算一组数值的算术平均值",
+    "distractorSymbol": "averageOfNumbersE",
+    "distractorCode": "function averageOfNumbersE(values: number[]): number {\n  if (values.length === 0) {\n    return 0;\n  }\n  let sum: number = 0;\n  for (let i = 0; i < values.length; i++) {\n    sum += values[i];\n  }\n  return sum / values.length;\n}"
+  },
+  {
+    "arId": "AR-09-02",
+    "title": "音乐库搜索",
+    "anchor": "model/SearchAllSongsModel.ets",
+    "message": "feat(library): 音乐库搜索",
+    "arComment": "// 在音乐库中按关键字匹配标题或艺术家，忽略大小写",
+    "arSymbol": "searchLibraryTracksE",
+    "arCode": "function searchLibraryTracksE(library: Array<Record<string, string>>, keyword: string): Array<Record<string, string>> {\n  const key: string = keyword.trim().toLowerCase();\n  if (key.length === 0) {\n    return library.slice();\n  }\n  const hits: Array<Record<string, string>> = [];\n  for (let i = 0; i < library.length; i++) {\n    const title: string = (library[i].title !== undefined ? library[i].title : '').toLowerCase();\n    const artist: string = (library[i].artist !== undefined ? library[i].artist : '').toLowerCase();\n    if (title.indexOf(key) >= 0 || artist.indexOf(key) >= 0) {\n      hits.push(library[i]);\n    }\n  }\n  return hits;\n}",
+    "distractorComment": "// 将十进制整数转换为二进制字符串",
+    "distractorSymbol": "decimalToBinaryE",
+    "distractorCode": "function decimalToBinaryE(value: number): string {\n  let n: number = Math.abs(Math.floor(value));\n  if (n === 0) {\n    return '0';\n  }\n  let bits: string = '';\n  while (n > 0) {\n    bits = (n % 2) + bits;\n    n = Math.floor(n / 2);\n  }\n  return value < 0 ? '-' + bits : bits;\n}"
+  },
+  {
+    "arId": "AR-10-01",
+    "title": "播放次数统计（累加并取 TopN）",
+    "anchor": "model/StatisticsModel.ets",
+    "message": "feat(stats): 播放次数统计",
+    "arComment": "// 累加每首歌的播放次数并取播放最多的前 N 首",
+    "arSymbol": "topPlayedSongsE",
+    "arCode": "function topPlayedSongsE(playEvents: number[], topN: number): Array<Record<string, number>> {\n  const counts: Map<number, number> = new Map<number, number>();\n  for (let i = 0; i < playEvents.length; i++) {\n    const id: number = playEvents[i];\n    const prev: number = counts.has(id) ? (counts.get(id) as number) : 0;\n    counts.set(id, prev + 1);\n  }\n  const ranked: Array<Record<string, number>> = [];\n  counts.forEach((cnt: number, id: number): void => {\n    ranked.push({ songId: id, plays: cnt });\n  });\n  ranked.sort((a: Record<string, number>, b: Record<string, number>): number => b.plays - a.plays);\n  return ranked.slice(0, Math.max(0, topN));\n}",
+    "distractorComment": "// 反转字符串中单词的顺序",
+    "distractorSymbol": "reverseWordOrderE",
+    "distractorCode": "function reverseWordOrderE(sentence: string): string {\n  const parts: string[] = sentence.trim().split(/\\s+/);\n  const out: string[] = [];\n  for (let i = parts.length - 1; i >= 0; i--) {\n    if (parts[i].length > 0) {\n      out.push(parts[i]);\n    }\n  }\n  return out.join(' ');\n}"
+  }
+]

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.0" height="32.0" viewBox="0 0 32.0 32.0">
+  <g>
+    <path d="@string/mtrl_checkbox_button_path_unchecked" fill="#000000"/>
+  </g>
+  <g>
+    <path d="@string/mtrl_checkbox_button_path_checked" fill="#000000"/>
+  </g>
+</svg>

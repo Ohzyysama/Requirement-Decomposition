@@ -1,0 +1,10 @@
+{
+  "app": {
+    "bundleName": "com.xuncorp.sp",
+    "vendor": "寻浔科技（上海）有限公司",
+    "versionCode": 1000004,
+    "versionName": "1.2.1",
+    "icon": "$media:layered_image",
+    "label": "$string:app_name"
+  }
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.0" height="32.0" viewBox="0 0 32.0 32.0">
+  <g>
+    <path d="@string/mtrl_checkbox_button_icon_path_indeterminate" fill="#ffffff"/>
+  </g>
+</svg>

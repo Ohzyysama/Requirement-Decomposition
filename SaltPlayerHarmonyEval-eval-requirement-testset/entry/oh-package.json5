@@ -1,0 +1,14 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@ohos/lottie": "^2.0.29",
+    "@ohos/imageknifepro": "^1.0.13"
+  },
+  "devDependencies": {},
+  "dynamicDependencies": {}
+}

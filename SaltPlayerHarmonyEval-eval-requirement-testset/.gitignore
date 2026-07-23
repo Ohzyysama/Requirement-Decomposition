@@ -1,0 +1,13 @@
+/.hvigor
+/.idea
+/.claude
+/node_modules
+/oh_modules
+/.preview
+/build
+/.cxx
+/.test
+.DS_Store
+*.hap
+
+# 补充忽略本地临时文件

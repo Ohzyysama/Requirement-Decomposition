@@ -1,0 +1,76 @@
+{
+  "float": [
+    {
+      "name": "abc_action_bar_default_height_material",
+      "value": "48.0vp"
+    },
+    {
+      "name": "material_time_picker_minimum_screen_height",
+      "value": "450.0vp"
+    },
+    {
+      "name": "material_time_picker_minimum_screen_width",
+      "value": "600.0vp"
+    },
+    {
+      "name": "mr_controller_volume_group_list_item_height",
+      "value": "61.0vp"
+    },
+    {
+      "name": "mr_controller_volume_group_list_item_icon_size",
+      "value": "18.0vp"
+    },
+    {
+      "name": "mr_controller_volume_group_list_max_height",
+      "value": "132.0vp"
+    },
+    {
+      "name": "mtrl_calendar_days_of_week_height",
+      "value": "20.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_content_padding",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_height_fullscreen",
+      "value": "96.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_toggle_margin_bottom",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_toggle_margin_top",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_calendar_landscape_header_width",
+      "value": "104.0vp"
+    },
+    {
+      "name": "mtrl_calendar_selection_baseline_to_top_fullscreen",
+      "value": "68.0vp"
+    },
+    {
+      "name": "mtrl_calendar_selection_text_baseline_to_bottom_fullscreen",
+      "value": "28.0vp"
+    },
+    {
+      "name": "mtrl_calendar_selection_text_baseline_to_top",
+      "value": "64.0vp"
+    },
+    {
+      "name": "mtrl_calendar_text_input_padding_top",
+      "value": "32.0vp"
+    },
+    {
+      "name": "mtrl_calendar_title_baseline_to_top",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_calendar_title_baseline_to_top_fullscreen",
+      "value": "32.0vp"
+    }
+  ]
+}

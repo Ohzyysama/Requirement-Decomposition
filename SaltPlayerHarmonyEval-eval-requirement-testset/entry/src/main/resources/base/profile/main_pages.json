@@ -1,0 +1,6 @@
+{
+  "src": [
+    "pages/main/MainPage",
+    "pages/FloatingStatusBarLyricsWindow"
+  ]
+}

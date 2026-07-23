@@ -1,0 +1,228 @@
+{
+  "integer": [
+    {
+      "name": "abc_config_activityDefaultDur",
+      "value": 220
+    },
+    {
+      "name": "abc_config_activityShortDur",
+      "value": 150
+    },
+    {
+      "name": "app_bar_elevation_anim_duration",
+      "value": 150
+    },
+    {
+      "name": "bottom_sheet_slide_duration",
+      "value": 150
+    },
+    {
+      "name": "cancel_button_image_alpha",
+      "value": 127
+    },
+    {
+      "name": "config_navAnimTime",
+      "value": 150
+    },
+    {
+      "name": "config_tooltipAnimTime",
+      "value": 150
+    },
+    {
+      "name": "default_icon_animation_duration",
+      "value": 10000
+    },
+    {
+      "name": "design_snackbar_text_max_lines",
+      "value": 2
+    },
+    {
+      "name": "design_tab_indicator_anim_duration_ms",
+      "value": 300
+    },
+    {
+      "name": "google_play_services_version",
+      "value": 12451000
+    },
+    {
+      "name": "hide_password_duration",
+      "value": 320
+    },
+    {
+      "name": "lrc_animation_duration",
+      "value": 1000
+    },
+    {
+      "name": "m3_badge_max_number",
+      "value": 999
+    },
+    {
+      "name": "m3_sys_motion_duration_medium1",
+      "value": 250
+    },
+    {
+      "name": "m3_sys_motion_duration_medium2",
+      "value": 300
+    },
+    {
+      "name": "m3_sys_motion_duration_medium3",
+      "value": 350
+    },
+    {
+      "name": "m3_sys_motion_duration_medium4",
+      "value": 400
+    },
+    {
+      "name": "m3_sys_motion_duration_short1",
+      "value": 50
+    },
+    {
+      "name": "m3_sys_motion_duration_short2",
+      "value": 100
+    },
+    {
+      "name": "m3_sys_motion_duration_short3",
+      "value": 150
+    },
+    {
+      "name": "material_motion_duration_long_1",
+      "value": 300
+    },
+    {
+      "name": "material_motion_duration_long_2",
+      "value": 350
+    },
+    {
+      "name": "material_motion_duration_medium_1",
+      "value": 200
+    },
+    {
+      "name": "material_motion_duration_medium_2",
+      "value": 250
+    },
+    {
+      "name": "material_motion_duration_short_1",
+      "value": 75
+    },
+    {
+      "name": "material_motion_duration_short_2",
+      "value": 150
+    },
+    {
+      "name": "material_motion_path",
+      "value": 0
+    },
+    {
+      "name": "mr_cast_volume_slider_layout_animation_duration_ms",
+      "value": 400
+    },
+    {
+      "name": "mr_controller_volume_group_list_animation_duration_ms",
+      "value": 400
+    },
+    {
+      "name": "mr_controller_volume_group_list_fade_in_duration_ms",
+      "value": 400
+    },
+    {
+      "name": "mr_controller_volume_group_list_fade_out_duration_ms",
+      "value": 200
+    },
+    {
+      "name": "mr_update_routes_delay_ms",
+      "value": 300
+    },
+    {
+      "name": "mtrl_badge_max_character_count",
+      "value": 4
+    },
+    {
+      "name": "mtrl_btn_anim_delay_ms",
+      "value": 100
+    },
+    {
+      "name": "mtrl_btn_anim_duration_ms",
+      "value": 100
+    },
+    {
+      "name": "mtrl_calendar_header_orientation",
+      "value": 1
+    },
+    {
+      "name": "mtrl_calendar_selection_text_lines",
+      "value": 1
+    },
+    {
+      "name": "mtrl_calendar_year_selector_span",
+      "value": 3
+    },
+    {
+      "name": "mtrl_card_anim_delay_ms",
+      "value": 75
+    },
+    {
+      "name": "mtrl_card_anim_duration_ms",
+      "value": 120
+    },
+    {
+      "name": "mtrl_chip_anim_duration",
+      "value": 100
+    },
+    {
+      "name": "mtrl_switch_thumb_motion_duration",
+      "value": 250
+    },
+    {
+      "name": "mtrl_switch_thumb_post_morphing_duration",
+      "value": 150
+    },
+    {
+      "name": "mtrl_switch_thumb_pre_morphing_duration",
+      "value": 100
+    },
+    {
+      "name": "mtrl_switch_thumb_pressed_duration",
+      "value": 100
+    },
+    {
+      "name": "mtrl_switch_thumb_viewport_center_coordinate",
+      "value": 16
+    },
+    {
+      "name": "mtrl_switch_thumb_viewport_size",
+      "value": 32
+    },
+    {
+      "name": "mtrl_switch_track_viewport_height",
+      "value": 32
+    },
+    {
+      "name": "mtrl_switch_track_viewport_width",
+      "value": 52
+    },
+    {
+      "name": "mtrl_tab_indicator_anim_duration_ms",
+      "value": 250
+    },
+    {
+      "name": "mtrl_view_gone",
+      "value": 2
+    },
+    {
+      "name": "mtrl_view_invisible",
+      "value": 1
+    },
+    {
+      "name": "mtrl_view_visible",
+      "value": 0
+    },
+    {
+      "name": "show_password_duration",
+      "value": 200
+    },
+    {
+      "name": "status_bar_notification_info_maxnum",
+      "value": 999
+    }
+  ]
+}

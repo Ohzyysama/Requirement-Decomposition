@@ -1,0 +1,176 @@
+{
+  "color": [
+    {
+      "name": "colorAccent",
+      "value": "#ff03dac5"
+    },
+    {
+      "name": "colorAppThemeColor",
+      "value": "#ffdb2c1f"
+    },
+    {
+      "name": "colorBlurViewBackground",
+      "value": "#a6000000"
+    },
+    {
+      "name": "colorDialogBackground",
+      "value": "#ff000000"
+    },
+    {
+      "name": "colorDividerBackground",
+      "value": "#ff191919"
+    },
+    {
+      "name": "colorEditTextBackground",
+      "value": "#ff1e1e1e"
+    },
+    {
+      "name": "colorItemBackground",
+      "value": "#ff0f1214"
+    },
+    {
+      "name": "colorItemBackgroundHalfTransparency",
+      "value": "#800f1214"
+    },
+    {
+      "name": "colorItemPressedBackground",
+      "value": "#ff0f0f0f"
+    },
+    {
+      "name": "colorMenuBackground",
+      "value": "#40000000"
+    },
+    {
+      "name": "colorPageBackground",
+      "value": "#ff0c0c0c"
+    },
+    {
+      "name": "colorPageBackgroundHalfTransparency",
+      "value": "#800f0f0f"
+    },
+    {
+      "name": "colorPrimary",
+      "value": "#ffaaaaaa"
+    },
+    {
+      "name": "colorStatusBar",
+      "value": "#ff0f0f0f"
+    },
+    {
+      "name": "colorSubIconForeground",
+      "value": "#ffc8c8c8"
+    },
+    {
+      "name": "colorSubTextForeground",
+      "value": "#bfe1e6eb"
+    },
+    {
+      "name": "colorTextForeground",
+      "value": "#ffebeef1"
+    },
+    {
+      "name": "dso_color_lyrics_back",
+      "value": "#4d000000"
+    },
+    {
+      "name": "homeWidget",
+      "value": "#bf141414"
+    },
+    {
+      "name": "icon_sub_background",
+      "value": "#bf292625"
+    },
+    {
+      "name": "invalid",
+      "value": "#ff464646"
+    },
+    {
+      "name": "menuMainBackground",
+      "value": "#ff141414"
+    },
+    {
+      "name": "miniPlayerBlurViewBackground",
+      "value": "#26191919"
+    },
+    {
+      "name": "playlistPageBackground",
+      "value": "#ff141414"
+    },
+    {
+      "name": "salt_color_bottom_page_background",
+      "value": "#ff121215"
+    },
+    {
+      "name": "salt_color_floating_material_overlay",
+      "value": "#33121215"
+    },
+    {
+      "name": "salt_color_floating_material_stroke",
+      "value": "#1affffff"
+    },
+    {
+      "name": "salt_color_button_background",
+      "value": "#ff0c1e2a"
+    },
+    {
+      "name": "salt_color_cutting_line",
+      "value": "#ff1e1e1e"
+    },
+    {
+      "name": "salt_color_dialog_background",
+      "value": "#ff191919"
+    },
+    {
+      "name": "salt_color_high_light",
+      "value": "#ff1478c8"
+    },
+    {
+      "name": "salt_color_icon_foreground",
+      "value": "#ffe1e6eb"
+    },
+    {
+      "name": "salt_color_on_page_background",
+      "value": "#592d2d2d"
+    },
+    {
+      "name": "salt_color_song_cover",
+      "value": "#ff111111"
+    },
+    {
+      "name": "salt_color_sub_background",
+      "value": "#ff292625"
+    },
+    {
+      "name": "songUnable",
+      "value": "#ff646464"
+    },
+    {
+      "name": "switchBackground",
+      "value": "#59141414"
+    },
+    {
+      "name": "salt_color_white",
+      "value": "#ff1a1a1e"
+    },
+    {
+      "name": "salt_color_stroke",
+      "value": "#ff2a2a2e"
+    },
+    {
+      "name": "salt_color_sub_text",
+      "value": "#ff8c8c8c"
+    },
+    {
+      "name": "warning_icon_color",
+      "value": "#ffFCE100"
+    },
+    {
+      "name": "warning_background",
+      "value": "#ff433519"
+    },
+    {
+      "name": "start_window_background",
+      "value": "#ff0c0c0c"
+    }
+  ]
+}

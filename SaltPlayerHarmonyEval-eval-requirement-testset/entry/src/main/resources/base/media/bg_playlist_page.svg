@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="grad_1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="@color/playlistPageBackground"/>
+      <stop offset="100%" stop-color="@color/colorPageBackground"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="24" height="24" fill="url(#grad_1)"/>
+</svg>

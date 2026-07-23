@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="@dimen/mtrl_switch_thumb_size" height="@dimen/mtrl_switch_thumb_size" viewBox="0 0 @integer/mtrl_switch_thumb_viewport_size @integer/mtrl_switch_thumb_viewport_size">
+  <g>
+    <path d="@string/mtrl_switch_thumb_path_unchecked" fill="#ffffff"/>
+  </g>
+</svg>

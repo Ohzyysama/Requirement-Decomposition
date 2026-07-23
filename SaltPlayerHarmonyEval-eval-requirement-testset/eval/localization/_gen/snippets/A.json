@@ -1,0 +1,98 @@
+[
+  {
+    "arId": "AR-01-01",
+    "title": "播放/暂停/上一曲/下一曲控制",
+    "anchor": "model/AudioPlayerService.ets",
+    "message": "feat(player): 播放/暂停/上一曲/下一曲控制",
+    "arComment": "// 播放控制：根据队列长度与当前下标计算上一曲/下一曲位置",
+    "arSymbol": "resolveTransportIndexA",
+    "arCode": "export function resolveTransportIndexA(action: string, index: number, total: number): number {\n  if (total <= 0) {\n    return -1\n  }\n  if (action === 'next') {\n    return (index + 1) % total\n  }\n  if (action === 'prev') {\n    return (index - 1 + total) % total\n  }\n  return Math.min(Math.max(index, 0), total - 1)\n}",
+    "distractorComment": "// 通用工具：将十六进制颜色解析为 RGB 分量（与本需求无关）",
+    "distractorSymbol": "parseHexColorA",
+    "distractorCode": "export function parseHexColorA(hex: string): number[] {\n  let s = hex.charAt(0) === '#' ? hex.slice(1) : hex\n  if (s.length === 3) {\n    s = s.charAt(0) + s.charAt(0) + s.charAt(1) + s.charAt(1) + s.charAt(2) + s.charAt(2)\n  }\n  const r = parseInt(s.slice(0, 2), 16)\n  const g = parseInt(s.slice(2, 4), 16)\n  const b = parseInt(s.slice(4, 6), 16)\n  return [r, g, b]\n}"
+  },
+  {
+    "arId": "AR-01-02",
+    "title": "播放模式切换（列表循环/单曲循环/随机）",
+    "anchor": "model/AudioPlayerService.ets",
+    "message": "feat(player): 播放模式循环/单曲/随机切换",
+    "arComment": "// 播放模式：在列表循环、单曲循环、随机三种模式间循环切换",
+    "arSymbol": "nextPlayModeA",
+    "arCode": "export function nextPlayModeA(mode: string): string {\n  const order: string[] = ['loop', 'single', 'shuffle']\n  let i = order.indexOf(mode)\n  if (i < 0) {\n    i = 0\n  }\n  const next = (i + 1) % order.length\n  return order[next]\n}",
+    "distractorComment": "// 通用工具：对数组进行原地去重并保持首次出现顺序（与本需求无关）",
+    "distractorSymbol": "dedupeKeepOrderA",
+    "distractorCode": "export function dedupeKeepOrderA(items: number[]): number[] {\n  const seen: number[] = []\n  const result: number[] = []\n  for (let i = 0; i < items.length; i++) {\n    const v = items[i]\n    if (seen.indexOf(v) < 0) {\n      seen.push(v)\n      result.push(v)\n    }\n  }\n  return result\n}"
+  },
+  {
+    "arId": "AR-01-03",
+    "title": "播放队列查看/清空/移除",
+    "anchor": "model/PlayQueueModel.ets",
+    "message": "feat(player): 播放队列查看/清空/移除",
+    "arComment": "// 播放队列：从队列中移除指定下标曲目并返回新队列",
+    "arSymbol": "removeFromQueueA",
+    "arCode": "export function removeFromQueueA(queue: string[], target: number): string[] {\n  if (target < 0 || target >= queue.length) {\n    return queue.slice()\n  }\n  const result: string[] = []\n  for (let i = 0; i < queue.length; i++) {\n    if (i !== target) {\n      result.push(queue[i])\n    }\n  }\n  return result\n}",
+    "distractorComment": "// 通用工具：计算字符串的简单哈希值用于缓存键（与本需求无关）",
+    "distractorSymbol": "simpleStringHashA",
+    "distractorCode": "export function simpleStringHashA(text: string): number {\n  let hash = 5381\n  for (let i = 0; i < text.length; i++) {\n    hash = ((hash << 5) + hash) + text.charCodeAt(i)\n    hash = hash & 0x7fffffff\n  }\n  return hash\n}"
+  },
+  {
+    "arId": "AR-01-04",
+    "title": "播放速度调节",
+    "anchor": "model/SoundEffectModel.ets",
+    "message": "feat(player): 播放速度调节",
+    "arComment": "// 播放速度调节：将倍速限制在有效区间并按步进对齐",
+    "arSymbol": "clampPlaybackSpeedA",
+    "arCode": "export function clampPlaybackSpeedA(speed: number): number {\n  const MIN = 0.25\n  const MAX = 4.0\n  const STEP = 0.05\n  if (Number.isNaN(speed)) {\n    return 1.0\n  }\n  const clamped = Math.min(MAX, Math.max(MIN, speed))\n  const stepped = Math.round(clamped / STEP) * STEP\n  return Math.round(stepped * 100) / 100\n}",
+    "distractorComment": "// 通用工具：格式化字节大小为可读字符串（与本需求无关）",
+    "distractorSymbol": "formatByteSizeA",
+    "distractorCode": "export function formatByteSizeA(bytes: number): string {\n  const units: string[] = ['B', 'KB', 'MB', 'GB']\n  let i = 0\n  let v = bytes\n  while (v >= 1024 && i < units.length - 1) {\n    v = v / 1024\n    i++\n  }\n  return v.toFixed(1) + units[i]\n}"
+  },
+  {
+    "arId": "AR-01-05",
+    "title": "进度拖动与跳转",
+    "anchor": "model/AudioPlayerService.ets",
+    "message": "feat(player): 进度条拖动跳转",
+    "arComment": "// 进度跳转：依据拖动百分比换算为毫秒并约束在曲目时长内",
+    "arSymbol": "seekPositionFromRatioA",
+    "arCode": "export function seekPositionFromRatioA(ratio: number, durationMs: number): number {\n  if (durationMs <= 0) {\n    return 0\n  }\n  let r = ratio\n  if (r < 0) {\n    r = 0\n  } else if (r > 1) {\n    r = 1\n  }\n  const pos = Math.round(r * durationMs)\n  return Math.min(pos, durationMs)\n}",
+    "distractorComment": "// 通用工具：判断给定年份是否为闰年（与本需求无关）",
+    "distractorSymbol": "isLeapYearA",
+    "distractorCode": "export function isLeapYearA(year: number): boolean {\n  if (year % 4 !== 0) {\n    return false\n  }\n  if (year % 100 !== 0) {\n    return true\n  }\n  return year % 400 === 0\n}"
+  },
+  {
+    "arId": "AR-01-06",
+    "title": "睡眠定时（设置时长+自动延长至本曲结束）",
+    "anchor": "model/SleepTimerService.ets",
+    "message": "feat(sleep-timer): 睡眠定时时长与自动延长",
+    "arComment": "// 睡眠定时：到点时若开启自动延长则顺延至当前曲目结束",
+    "arSymbol": "computeSleepStopTimeA",
+    "arCode": "export function computeSleepStopTimeA(durationMin: number, songRemainMs: number, extend: boolean): number {\n  const base = Math.max(0, Math.round(durationMin * 60 * 1000))\n  if (!extend) {\n    return base\n  }\n  if (songRemainMs <= 0) {\n    return base\n  }\n  return base + songRemainMs\n}",
+    "distractorComment": "// 通用工具：将驼峰命名转换为短横线命名（与本需求无关）",
+    "distractorSymbol": "camelToKebabA",
+    "distractorCode": "export function camelToKebabA(name: string): string {\n  let out = ''\n  for (let i = 0; i < name.length; i++) {\n    const c = name.charAt(i)\n    const lower = c.toLowerCase()\n    if (c !== lower && i > 0) {\n      out += '-'\n    }\n    out += lower\n  }\n  return out\n}"
+  },
+  {
+    "arId": "AR-01-07",
+    "title": "播放页展示专辑封面",
+    "anchor": "model/CurrentSongCoverController.ets",
+    "message": "feat(player): 播放页展示专辑封面",
+    "arComment": "// 专辑封面：优先使用高清封面地址，缺失时回退到默认占位图",
+    "arSymbol": "resolveCoverUriA",
+    "arCode": "export function resolveCoverUriA(hd: string, normal: string, placeholder: string): string {\n  if (hd !== null && hd.length > 0) {\n    return hd\n  }\n  if (normal !== null && normal.length > 0) {\n    return normal\n  }\n  return placeholder\n}",
+    "distractorComment": "// 通用工具：将秒数格式化为 mm:ss 时间文本（与本需求无关）",
+    "distractorSymbol": "formatSecondsClockA",
+    "distractorCode": "export function formatSecondsClockA(total: number): string {\n  const t = Math.max(0, Math.floor(total))\n  const m = Math.floor(t / 60)\n  const s = t % 60\n  const mm = m < 10 ? '0' + m : '' + m\n  const ss = s < 10 ? '0' + s : '' + s\n  return mm + ':' + ss\n}"
+  },
+  {
+    "arId": "AR-01-08",
+    "title": "播放页快捷操作入口",
+    "anchor": "viewmodel/PlayerPageViewModel.ets",
+    "message": "feat(player): 播放页快捷操作入口",
+    "arComment": "// 快捷操作：根据当前播放状态筛选出可展示的操作入口列表",
+    "arSymbol": "buildQuickActionsA",
+    "arCode": "export function buildQuickActionsA(hasLyric: boolean, isFavorite: boolean): string[] {\n  const actions: string[] = ['queue', 'timer']\n  if (hasLyric) {\n    actions.push('lyric')\n  }\n  actions.push(isFavorite ? 'unfavorite' : 'favorite')\n  actions.push('more')\n  return actions\n}",
+    "distractorComment": "// 通用工具：计算两个整数的最大公约数（与本需求无关）",
+    "distractorSymbol": "greatestCommonDivisorA",
+    "distractorCode": "export function greatestCommonDivisorA(a: number, b: number): number {\n  let x = Math.abs(a)\n  let y = Math.abs(b)\n  while (y !== 0) {\n    const t = y\n    y = x % y\n    x = t\n  }\n  return x\n}"
+  }
+]

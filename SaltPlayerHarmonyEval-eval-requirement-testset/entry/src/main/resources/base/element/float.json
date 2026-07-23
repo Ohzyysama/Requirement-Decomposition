@@ -1,0 +1,1972 @@
+{
+  "float": [
+    {
+      "name": "abc_action_bar_content_inset_material",
+      "value": "16.0vp"
+    },
+    {
+      "name": "abc_action_bar_content_inset_with_nav",
+      "value": "72.0vp"
+    },
+    {
+      "name": "abc_action_bar_default_height_material",
+      "value": "56.0vp"
+    },
+    {
+      "name": "abc_action_bar_default_padding_end_material",
+      "value": "0.0vp"
+    },
+    {
+      "name": "abc_action_bar_default_padding_start_material",
+      "value": "0.0vp"
+    },
+    {
+      "name": "abc_action_bar_elevation_material",
+      "value": "4.0vp"
+    },
+    {
+      "name": "abc_action_bar_overflow_padding_end_material",
+      "value": "10.0vp"
+    },
+    {
+      "name": "abc_action_bar_overflow_padding_start_material",
+      "value": "6.0vp"
+    },
+    {
+      "name": "abc_action_bar_subtitle_top_margin_material",
+      "value": "-3.0vp"
+    },
+    {
+      "name": "abc_alert_dialog_button_bar_height",
+      "value": "48.0vp"
+    },
+    {
+      "name": "abc_alert_dialog_button_dimen",
+      "value": "48.0vp"
+    },
+    {
+      "name": "abc_button_inset_horizontal_material",
+      "value": "4.0vp"
+    },
+    {
+      "name": "abc_button_inset_vertical_material",
+      "value": "6.0vp"
+    },
+    {
+      "name": "abc_button_padding_horizontal_material",
+      "value": "8.0vp"
+    },
+    {
+      "name": "abc_button_padding_vertical_material",
+      "value": "4.0vp"
+    },
+    {
+      "name": "abc_cascading_menus_min_smallest_width",
+      "value": "720.0vp"
+    },
+    {
+      "name": "abc_config_prefDialogWidth",
+      "value": "320.0vp"
+    },
+    {
+      "name": "abc_control_corner_material",
+      "value": "2.0vp"
+    },
+    {
+      "name": "abc_control_inset_material",
+      "value": "4.0vp"
+    },
+    {
+      "name": "abc_control_padding_material",
+      "value": "4.0vp"
+    },
+    {
+      "name": "abc_dialog_corner_radius_material",
+      "value": "2.0vp"
+    },
+    {
+      "name": "abc_dialog_fixed_height_major",
+      "value": "79.99999%"
+    },
+    {
+      "name": "abc_dialog_fixed_height_minor",
+      "value": "100.0%"
+    },
+    {
+      "name": "abc_dialog_fixed_width_major",
+      "value": "320.0vp"
+    },
+    {
+      "name": "abc_dialog_fixed_width_minor",
+      "value": "320.0vp"
+    },
+    {
+      "name": "abc_dialog_list_padding_bottom_no_buttons",
+      "value": "8.0vp"
+    },
+    {
+      "name": "abc_dialog_list_padding_top_no_title",
+      "value": "8.0vp"
+    },
+    {
+      "name": "abc_dialog_min_width_major",
+      "value": "65.0%"
+    },
+    {
+      "name": "abc_dialog_min_width_minor",
+      "value": "95.00001%"
+    },
+    {
+      "name": "abc_dialog_padding_material",
+      "value": "24.0vp"
+    },
+    {
+      "name": "abc_dialog_padding_top_material",
+      "value": "18.0vp"
+    },
+    {
+      "name": "abc_dialog_title_divider_material",
+      "value": "8.0vp"
+    },
+    {
+      "name": "abc_dropdownitem_icon_width",
+      "value": "32.0vp"
+    },
+    {
+      "name": "abc_dropdownitem_text_padding_left",
+      "value": "8.0vp"
+    },
+    {
+      "name": "abc_dropdownitem_text_padding_right",
+      "value": "8.0vp"
+    },
+    {
+      "name": "abc_edit_text_inset_bottom_material",
+      "value": "7.0vp"
+    },
+    {
+      "name": "abc_edit_text_inset_horizontal_material",
+      "value": "4.0vp"
+    },
+    {
+      "name": "abc_edit_text_inset_top_material",
+      "value": "10.0vp"
+    },
+    {
+      "name": "abc_floating_window_z",
+      "value": "16.0vp"
+    },
+    {
+      "name": "abc_list_item_height_large_material",
+      "value": "80.0vp"
+    },
+    {
+      "name": "abc_list_item_height_material",
+      "value": "64.0vp"
+    },
+    {
+      "name": "abc_list_item_height_small_material",
+      "value": "48.0vp"
+    },
+    {
+      "name": "abc_list_item_padding_horizontal_material",
+      "value": "24.0vp"
+    },
+    {
+      "name": "abc_panel_menu_list_width",
+      "value": "296.0vp"
+    },
+    {
+      "name": "abc_progress_bar_height_material",
+      "value": "4.0vp"
+    },
+    {
+      "name": "abc_select_dialog_padding_start_material",
+      "value": "20.0vp"
+    },
+    {
+      "name": "abc_star_big",
+      "value": "48.0vp"
+    },
+    {
+      "name": "abc_star_medium",
+      "value": "36.0vp"
+    },
+    {
+      "name": "abc_star_small",
+      "value": "16.0vp"
+    },
+    {
+      "name": "abc_switch_padding",
+      "value": "0.0px"
+    },
+    {
+      "name": "abc_text_size_menu_header_material",
+      "value": "14.0fp"
+    },
+    {
+      "name": "ambientShadowAlpha",
+      "value": "0.016vp"
+    },
+    {
+      "name": "appcompat_dialog_background_inset",
+      "value": "16.0vp"
+    },
+    {
+      "name": "cardview_compat_inset_shadow",
+      "value": "1.0vp"
+    },
+    {
+      "name": "cardview_default_elevation",
+      "value": "2.0vp"
+    },
+    {
+      "name": "cardview_default_radius",
+      "value": "2.0vp"
+    },
+    {
+      "name": "clock_face_margin_start",
+      "value": "64.0vp"
+    },
+    {
+      "name": "compat_button_inset_horizontal_material",
+      "value": "4.0vp"
+    },
+    {
+      "name": "compat_button_inset_vertical_material",
+      "value": "6.0vp"
+    },
+    {
+      "name": "compat_button_padding_horizontal_material",
+      "value": "8.0vp"
+    },
+    {
+      "name": "compat_button_padding_vertical_material",
+      "value": "4.0vp"
+    },
+    {
+      "name": "compat_control_corner_material",
+      "value": "2.0vp"
+    },
+    {
+      "name": "compat_notification_large_icon_max_height",
+      "value": "320.0vp"
+    },
+    {
+      "name": "compat_notification_large_icon_max_width",
+      "value": "320.0vp"
+    },
+    {
+      "name": "def_drawer_elevation",
+      "value": "10.0vp"
+    },
+    {
+      "name": "defaultHeight",
+      "value": "56.0vp"
+    },
+    {
+      "name": "defaultPadding",
+      "value": "16.0vp"
+    },
+    {
+      "name": "defaultRadius",
+      "value": "8.0vp"
+    },
+    {
+      "name": "defaultTextSize",
+      "value": "16.0vp"
+    },
+    {
+      "name": "default_navigation_active_text_size",
+      "value": "14.0fp"
+    },
+    {
+      "name": "default_navigation_text_size",
+      "value": "12.0fp"
+    },
+    {
+      "name": "design_appbar_elevation",
+      "value": "4.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_active_item_max_width",
+      "value": "168.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_active_item_min_width",
+      "value": "96.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_active_text_size",
+      "value": "14.0fp"
+    },
+    {
+      "name": "design_bottom_navigation_elevation",
+      "value": "8.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_height",
+      "value": "56.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_item_max_width",
+      "value": "96.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_item_min_width",
+      "value": "56.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_label_padding",
+      "value": "10.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_margin",
+      "value": "8.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_shadow_height",
+      "value": "1.0vp"
+    },
+    {
+      "name": "design_bottom_navigation_text_size",
+      "value": "12.0fp"
+    },
+    {
+      "name": "design_bottom_sheet_elevation",
+      "value": "8.0vp"
+    },
+    {
+      "name": "design_bottom_sheet_modal_elevation",
+      "value": "16.0vp"
+    },
+    {
+      "name": "design_bottom_sheet_peek_height_min",
+      "value": "64.0vp"
+    },
+    {
+      "name": "design_fab_border_width",
+      "value": "0.5vp"
+    },
+    {
+      "name": "design_fab_elevation",
+      "value": "6.0vp"
+    },
+    {
+      "name": "design_fab_image_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "design_fab_size_mini",
+      "value": "40.0vp"
+    },
+    {
+      "name": "design_fab_size_normal",
+      "value": "56.0vp"
+    },
+    {
+      "name": "design_fab_translation_z_hovered_focused",
+      "value": "6.0vp"
+    },
+    {
+      "name": "design_fab_translation_z_pressed",
+      "value": "6.0vp"
+    },
+    {
+      "name": "design_navigation_elevation",
+      "value": "16.0vp"
+    },
+    {
+      "name": "design_navigation_icon_padding",
+      "value": "32.0vp"
+    },
+    {
+      "name": "design_navigation_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "design_navigation_item_horizontal_padding",
+      "value": "16.0vp"
+    },
+    {
+      "name": "design_navigation_item_icon_padding",
+      "value": "32.0vp"
+    },
+    {
+      "name": "design_navigation_item_vertical_padding",
+      "value": "4.0vp"
+    },
+    {
+      "name": "design_navigation_max_width",
+      "value": "280.0vp"
+    },
+    {
+      "name": "design_navigation_padding_bottom",
+      "value": "8.0vp"
+    },
+    {
+      "name": "design_navigation_separator_vertical_padding",
+      "value": "8.0vp"
+    },
+    {
+      "name": "design_snackbar_action_inline_max_width",
+      "value": "128.0vp"
+    },
+    {
+      "name": "design_snackbar_action_text_color_alpha",
+      "value": "1.0vp"
+    },
+    {
+      "name": "design_snackbar_background_corner_radius",
+      "value": "0.0vp"
+    },
+    {
+      "name": "design_snackbar_elevation",
+      "value": "6.0vp"
+    },
+    {
+      "name": "design_snackbar_extra_spacing_horizontal",
+      "value": "0.0vp"
+    },
+    {
+      "name": "design_snackbar_max_width",
+      "value": "-1.0px"
+    },
+    {
+      "name": "design_snackbar_min_width",
+      "value": "-1.0px"
+    },
+    {
+      "name": "design_snackbar_padding_horizontal",
+      "value": "12.0vp"
+    },
+    {
+      "name": "design_snackbar_padding_vertical",
+      "value": "14.0vp"
+    },
+    {
+      "name": "design_snackbar_padding_vertical_2lines",
+      "value": "16.0vp"
+    },
+    {
+      "name": "design_snackbar_text_size",
+      "value": "14.0fp"
+    },
+    {
+      "name": "design_tab_max_width",
+      "value": "264.0vp"
+    },
+    {
+      "name": "design_tab_scrollable_min_width",
+      "value": "72.0vp"
+    },
+    {
+      "name": "design_tab_text_size",
+      "value": "14.0fp"
+    },
+    {
+      "name": "design_tab_text_size_2line",
+      "value": "12.0fp"
+    },
+    {
+      "name": "design_textinput_caption_translate_y",
+      "value": "5.0vp"
+    },
+    {
+      "name": "fastscroll_default_thickness",
+      "value": "8.0vp"
+    },
+    {
+      "name": "fastscroll_margin",
+      "value": "0.0vp"
+    },
+    {
+      "name": "fastscroll_minimum_range",
+      "value": "50.0vp"
+    },
+    {
+      "name": "highlight_alpha_material_colored",
+      "value": "0.26vp"
+    },
+    {
+      "name": "highlight_alpha_material_dark",
+      "value": "0.2vp"
+    },
+    {
+      "name": "highlight_alpha_material_light",
+      "value": "0.12vp"
+    },
+    {
+      "name": "hint_alpha_material_dark",
+      "value": "0.5vp"
+    },
+    {
+      "name": "hint_alpha_material_light",
+      "value": "0.38vp"
+    },
+    {
+      "name": "hint_pressed_alpha_material_dark",
+      "value": "0.7vp"
+    },
+    {
+      "name": "hint_pressed_alpha_material_light",
+      "value": "0.54vp"
+    },
+    {
+      "name": "item_touch_helper_max_drag_scroll_per_frame",
+      "value": "20.0vp"
+    },
+    {
+      "name": "item_touch_helper_swipe_escape_max_velocity",
+      "value": "800.0vp"
+    },
+    {
+      "name": "item_touch_helper_swipe_escape_velocity",
+      "value": "120.0vp"
+    },
+    {
+      "name": "lineSpacingExtra",
+      "value": "4.0vp"
+    },
+    {
+      "name": "lrc_drawable_width",
+      "value": "30.0vp"
+    },
+    {
+      "name": "lrc_sentence_divider_height",
+      "value": "24.0vp"
+    },
+    {
+      "name": "lrc_text_size",
+      "value": "16.0fp"
+    },
+    {
+      "name": "lrc_time_text_size",
+      "value": "12.0fp"
+    },
+    {
+      "name": "lrc_time_width",
+      "value": "40.0vp"
+    },
+    {
+      "name": "lrc_timeline_height",
+      "value": "1.0vp"
+    },
+    {
+      "name": "lrc_translate_divider_height",
+      "value": "5.0vp"
+    },
+    {
+      "name": "m3_alert_dialog_action_bottom_padding",
+      "value": "14.0vp"
+    },
+    {
+      "name": "m3_alert_dialog_action_top_padding",
+      "value": "14.0vp"
+    },
+    {
+      "name": "m3_alert_dialog_corner_size",
+      "value": "28.0vp"
+    },
+    {
+      "name": "m3_alert_dialog_icon_margin",
+      "value": "16.0vp"
+    },
+    {
+      "name": "m3_alert_dialog_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "m3_alert_dialog_title_bottom_margin",
+      "value": "16.0vp"
+    },
+    {
+      "name": "m3_back_progress_bottom_container_max_scale_x_distance",
+      "value": "48.0vp"
+    },
+    {
+      "name": "m3_back_progress_bottom_container_max_scale_y_distance",
+      "value": "24.0vp"
+    },
+    {
+      "name": "m3_back_progress_side_container_max_scale_x_distance_grow",
+      "value": "12.0vp"
+    },
+    {
+      "name": "m3_back_progress_side_container_max_scale_x_distance_shrink",
+      "value": "24.0vp"
+    },
+    {
+      "name": "m3_back_progress_side_container_max_scale_y_distance",
+      "value": "48.0vp"
+    },
+    {
+      "name": "m3_bottom_nav_item_padding_bottom",
+      "value": "16.0vp"
+    },
+    {
+      "name": "m3_carousel_debug_keyline_width",
+      "value": "2.0vp"
+    },
+    {
+      "name": "m3_carousel_small_item_size_max",
+      "value": "56.0vp"
+    },
+    {
+      "name": "m3_carousel_small_item_size_min",
+      "value": "40.0vp"
+    },
+    {
+      "name": "m3_comp_button_group_standard_small_between_space",
+      "value": "12.0vp"
+    },
+    {
+      "name": "m3_comp_outlined_autocomplete_menu_container_elevation",
+      "value": "3.0vp"
+    },
+    {
+      "name": "m3_comp_outlined_text_field_focus_outline_width",
+      "value": "2.0vp"
+    },
+    {
+      "name": "m3_comp_outlined_text_field_outline_width",
+      "value": "1.0vp"
+    },
+    {
+      "name": "m3_comp_primary_navigation_tab_with_icon_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "m3_comp_scrim_container_opacity",
+      "value": "0.32vp"
+    },
+    {
+      "name": "m3_comp_sheet_side_docked_standard_container_elevation",
+      "value": "0.0vp"
+    },
+    {
+      "name": "m3_comp_switch_disabled_selected_handle_opacity",
+      "value": "1.0vp"
+    },
+    {
+      "name": "m3_comp_switch_disabled_selected_icon_opacity",
+      "value": "0.38vp"
+    },
+    {
+      "name": "m3_comp_switch_disabled_track_opacity",
+      "value": "0.12vp"
+    },
+    {
+      "name": "m3_comp_switch_disabled_unselected_handle_opacity",
+      "value": "0.38vp"
+    },
+    {
+      "name": "m3_comp_switch_disabled_unselected_icon_opacity",
+      "value": "0.38vp"
+    },
+    {
+      "name": "m3_comp_switch_track_height",
+      "value": "32.0vp"
+    },
+    {
+      "name": "m3_comp_switch_track_width",
+      "value": "52.0vp"
+    },
+    {
+      "name": "m3_fab_corner_size",
+      "value": "29.999996%"
+    },
+    {
+      "name": "m3_multiline_hint_filled_text_extra_space",
+      "value": "4.0vp"
+    },
+    {
+      "name": "m3_navigation_rail_icon_label_padding",
+      "value": "4.0vp"
+    },
+    {
+      "name": "m3_navigation_rail_label_padding_horizontal",
+      "value": "2.0vp"
+    },
+    {
+      "name": "m3_searchbar_text_size",
+      "value": "16.0fp"
+    },
+    {
+      "name": "m3_searchview_divider_size",
+      "value": "1.0vp"
+    },
+    {
+      "name": "m3_side_sheet_standard_elevation",
+      "value": "0.0vp"
+    },
+    {
+      "name": "m3_sys_elevation_level0",
+      "value": "0.0vp"
+    },
+    {
+      "name": "m3_sys_elevation_level2",
+      "value": "3.0vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_emphasized_accelerate_control_x1",
+      "value": "0.3vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_emphasized_accelerate_control_x2",
+      "value": "0.8vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_emphasized_accelerate_control_y1",
+      "value": "0.0vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_emphasized_accelerate_control_y2",
+      "value": "0.2vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_emphasized_decelerate_control_x1",
+      "value": "0.1vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_emphasized_decelerate_control_x2",
+      "value": "0.1vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_emphasized_decelerate_control_y1",
+      "value": "0.7vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_emphasized_decelerate_control_y2",
+      "value": "1.0vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_standard_control_x1",
+      "value": "0.2vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_standard_control_x2",
+      "value": "0.0vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_standard_control_y1",
+      "value": "0.0vp"
+    },
+    {
+      "name": "m3_sys_motion_easing_standard_control_y2",
+      "value": "1.0vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_default_effects_damping",
+      "value": "1.0vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_default_effects_stiffness",
+      "value": "1600.0vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_default_spatial_damping",
+      "value": "0.9vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_default_spatial_stiffness",
+      "value": "700.0vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_fast_effects_damping",
+      "value": "1.0vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_fast_effects_stiffness",
+      "value": "3800.0vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_fast_spatial_damping",
+      "value": "0.9vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_fast_spatial_stiffness",
+      "value": "1400.0vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_slow_effects_damping",
+      "value": "1.0vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_slow_effects_stiffness",
+      "value": "800.0vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_slow_spatial_damping",
+      "value": "0.9vp"
+    },
+    {
+      "name": "m3_sys_motion_standard_spring_slow_spatial_stiffness",
+      "value": "300.0vp"
+    },
+    {
+      "name": "material_bottom_sheet_max_width",
+      "value": "640.0vp"
+    },
+    {
+      "name": "material_clock_display_height",
+      "value": "80.0vp"
+    },
+    {
+      "name": "material_clock_display_padding",
+      "value": "24.0vp"
+    },
+    {
+      "name": "material_clock_display_width",
+      "value": "96.0vp"
+    },
+    {
+      "name": "material_clock_hand_center_dot_radius",
+      "value": "4.0vp"
+    },
+    {
+      "name": "material_clock_hand_padding",
+      "value": "4.0vp"
+    },
+    {
+      "name": "material_clock_hand_stroke_width",
+      "value": "2.0vp"
+    },
+    {
+      "name": "material_clock_number_text_size",
+      "value": "15.0fp"
+    },
+    {
+      "name": "material_clock_period_toggle_height",
+      "value": "96.0vp"
+    },
+    {
+      "name": "material_clock_period_toggle_horizontal_gap",
+      "value": "12.0vp"
+    },
+    {
+      "name": "material_clock_period_toggle_vertical_gap",
+      "value": "12.0vp"
+    },
+    {
+      "name": "material_clock_period_toggle_width",
+      "value": "52.0vp"
+    },
+    {
+      "name": "material_clock_size",
+      "value": "256.0vp"
+    },
+    {
+      "name": "material_cursor_inset",
+      "value": "-4.0vp"
+    },
+    {
+      "name": "material_cursor_width",
+      "value": "2.0vp"
+    },
+    {
+      "name": "material_divider_thickness",
+      "value": "1.0vp"
+    },
+    {
+      "name": "material_emphasis_disabled",
+      "value": "0.38vp"
+    },
+    {
+      "name": "material_emphasis_high_type",
+      "value": "0.87vp"
+    },
+    {
+      "name": "material_emphasis_medium",
+      "value": "0.6vp"
+    },
+    {
+      "name": "material_filled_edittext_font_1_3_padding_bottom",
+      "value": "12.0vp"
+    },
+    {
+      "name": "material_filled_edittext_font_1_3_padding_top",
+      "value": "23.0vp"
+    },
+    {
+      "name": "material_filled_edittext_font_2_0_padding_bottom",
+      "value": "8.0vp"
+    },
+    {
+      "name": "material_filled_edittext_font_2_0_padding_top",
+      "value": "32.0vp"
+    },
+    {
+      "name": "material_font_1_3_box_collapsed_padding_top",
+      "value": "4.0vp"
+    },
+    {
+      "name": "material_font_2_0_box_collapsed_padding_top",
+      "value": "8.0vp"
+    },
+    {
+      "name": "material_helper_text_default_padding_top",
+      "value": "4.0vp"
+    },
+    {
+      "name": "material_helper_text_font_1_3_padding_horizontal",
+      "value": "12.0vp"
+    },
+    {
+      "name": "material_helper_text_font_1_3_padding_top",
+      "value": "8.0vp"
+    },
+    {
+      "name": "material_input_text_to_prefix_suffix_padding",
+      "value": "2.0vp"
+    },
+    {
+      "name": "material_textinput_max_width",
+      "value": "488.0vp"
+    },
+    {
+      "name": "material_textinput_min_width",
+      "value": "56.0vp"
+    },
+    {
+      "name": "material_textinput_min_width_with_label",
+      "value": "88.0vp"
+    },
+    {
+      "name": "material_time_picker_minimum_screen_height",
+      "value": "560.0vp"
+    },
+    {
+      "name": "material_time_picker_minimum_screen_width",
+      "value": "340.0vp"
+    },
+    {
+      "name": "mediarouter_chooser_list_item_padding_bottom",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mediarouter_chooser_list_item_padding_end",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mediarouter_chooser_list_item_padding_start",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mediarouter_chooser_list_item_padding_top",
+      "value": "12.0vp"
+    },
+    {
+      "name": "minHeight",
+      "value": "40.0vp"
+    },
+    {
+      "name": "minPlusHeight",
+      "value": "48.0vp"
+    },
+    {
+      "name": "mr_cast_group_volume_seekbar_height",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mr_cast_meta_art_size",
+      "value": "36.0vp"
+    },
+    {
+      "name": "mr_cast_meta_subtitle_text_size",
+      "value": "13.0fp"
+    },
+    {
+      "name": "mr_cast_route_volume_seekbar_height",
+      "value": "2.0vp"
+    },
+    {
+      "name": "mr_cast_seekbar_thumb_size",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mr_controller_volume_group_list_item_height",
+      "value": "68.0vp"
+    },
+    {
+      "name": "mr_controller_volume_group_list_item_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mr_controller_volume_group_list_max_height",
+      "value": "288.0vp"
+    },
+    {
+      "name": "mr_controller_volume_group_list_padding_top",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mr_controller_wifi_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mr_dialog_fixed_width_major",
+      "value": "320.0vp"
+    },
+    {
+      "name": "mr_dialog_fixed_width_minor",
+      "value": "320.0vp"
+    },
+    {
+      "name": "mr_dynamic_dialog_header_text_size",
+      "value": "11.0fp"
+    },
+    {
+      "name": "mr_dynamic_dialog_route_text_size",
+      "value": "12.0fp"
+    },
+    {
+      "name": "mr_dynamic_dialog_row_height",
+      "value": "48.0vp"
+    },
+    {
+      "name": "mr_dynamic_volume_group_list_item_height",
+      "value": "80.0vp"
+    },
+    {
+      "name": "mtrl_alert_dialog_background_inset_bottom",
+      "value": "10.0vp"
+    },
+    {
+      "name": "mtrl_alert_dialog_background_inset_end",
+      "value": "10.0vp"
+    },
+    {
+      "name": "mtrl_alert_dialog_background_inset_start",
+      "value": "10.0vp"
+    },
+    {
+      "name": "mtrl_alert_dialog_background_inset_top",
+      "value": "10.0vp"
+    },
+    {
+      "name": "mtrl_alert_dialog_picker_background_inset",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_badge_horizontal_edge_offset",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_badge_long_text_horizontal_padding",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_badge_size",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_badge_text_horizontal_edge_offset",
+      "value": "6.0vp"
+    },
+    {
+      "name": "mtrl_badge_text_size",
+      "value": "10.0fp"
+    },
+    {
+      "name": "mtrl_badge_toolbar_action_menu_item_horizontal_offset",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_badge_toolbar_action_menu_item_vertical_offset",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_badge_with_text_size",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_bottomappbar_fabOffsetEndMode",
+      "value": "60.0vp"
+    },
+    {
+      "name": "mtrl_bottomappbar_fab_bottom_margin",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_bottomappbar_fab_cradle_margin",
+      "value": "5.0vp"
+    },
+    {
+      "name": "mtrl_bottomappbar_fab_cradle_rounded_corner_radius",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_bottomappbar_fab_cradle_vertical_offset",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_bottomappbar_height",
+      "value": "56.0vp"
+    },
+    {
+      "name": "mtrl_btn_corner_radius",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_btn_dialog_btn_min_width",
+      "value": "64.0vp"
+    },
+    {
+      "name": "mtrl_btn_disabled_elevation",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_btn_disabled_z",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_btn_elevation",
+      "value": "2.0vp"
+    },
+    {
+      "name": "mtrl_btn_focused_z",
+      "value": "2.0vp"
+    },
+    {
+      "name": "mtrl_btn_hovered_z",
+      "value": "2.0vp"
+    },
+    {
+      "name": "mtrl_btn_icon_btn_padding_left",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_btn_icon_padding",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_btn_inset",
+      "value": "6.0vp"
+    },
+    {
+      "name": "mtrl_btn_letter_spacing",
+      "value": "0.07vp"
+    },
+    {
+      "name": "mtrl_btn_max_width",
+      "value": "320.0vp"
+    },
+    {
+      "name": "mtrl_btn_padding_bottom",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_btn_padding_left",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_btn_padding_right",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_btn_padding_top",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_btn_pressed_z",
+      "value": "6.0vp"
+    },
+    {
+      "name": "mtrl_btn_snackbar_margin_horizontal",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_btn_stroke_size",
+      "value": "1.0vp"
+    },
+    {
+      "name": "mtrl_btn_text_btn_icon_padding",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_btn_text_btn_padding_left",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_btn_text_btn_padding_right",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_btn_text_size",
+      "value": "14.0fp"
+    },
+    {
+      "name": "mtrl_btn_z",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_calendar_action_confirm_button_min_width",
+      "value": "64.0vp"
+    },
+    {
+      "name": "mtrl_calendar_action_height",
+      "value": "52.0vp"
+    },
+    {
+      "name": "mtrl_calendar_action_padding",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_calendar_bottom_padding",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_calendar_content_padding",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_calendar_day_corner",
+      "value": "15.0vp"
+    },
+    {
+      "name": "mtrl_calendar_day_height",
+      "value": "32.0vp"
+    },
+    {
+      "name": "mtrl_calendar_day_horizontal_padding",
+      "value": "3.0vp"
+    },
+    {
+      "name": "mtrl_calendar_day_today_stroke",
+      "value": "1.0vp"
+    },
+    {
+      "name": "mtrl_calendar_day_vertical_padding",
+      "value": "1.0vp"
+    },
+    {
+      "name": "mtrl_calendar_day_width",
+      "value": "36.0vp"
+    },
+    {
+      "name": "mtrl_calendar_days_of_week_height",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_calendar_dialog_background_inset",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_content_padding",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_content_padding_fullscreen",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_divider_thickness",
+      "value": "1.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_height",
+      "value": "120.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_height_fullscreen",
+      "value": "128.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_selection_line_height",
+      "value": "32.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_text_padding",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_toggle_margin_bottom",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_calendar_header_toggle_margin_top",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_calendar_landscape_header_width",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_calendar_maximum_default_fullscreen_minor_axis",
+      "value": "480.0vp"
+    },
+    {
+      "name": "mtrl_calendar_month_horizontal_padding",
+      "value": "2.0vp"
+    },
+    {
+      "name": "mtrl_calendar_month_vertical_padding",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_calendar_navigation_bottom_padding",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_calendar_navigation_height",
+      "value": "48.0vp"
+    },
+    {
+      "name": "mtrl_calendar_navigation_top_padding",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_calendar_selection_baseline_to_top_fullscreen",
+      "value": "104.0vp"
+    },
+    {
+      "name": "mtrl_calendar_selection_text_baseline_to_bottom",
+      "value": "20.0vp"
+    },
+    {
+      "name": "mtrl_calendar_selection_text_baseline_to_bottom_fullscreen",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_calendar_selection_text_baseline_to_top",
+      "value": "100.0vp"
+    },
+    {
+      "name": "mtrl_calendar_text_input_padding_top",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_calendar_title_baseline_to_top",
+      "value": "28.0vp"
+    },
+    {
+      "name": "mtrl_calendar_title_baseline_to_top_fullscreen",
+      "value": "68.0vp"
+    },
+    {
+      "name": "mtrl_calendar_year_corner",
+      "value": "18.0vp"
+    },
+    {
+      "name": "mtrl_calendar_year_height",
+      "value": "52.0vp"
+    },
+    {
+      "name": "mtrl_calendar_year_horizontal_padding",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_calendar_year_vertical_padding",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_calendar_year_width",
+      "value": "88.0vp"
+    },
+    {
+      "name": "mtrl_card_checked_icon_margin",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_card_checked_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_card_corner_radius",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_card_dragged_z",
+      "value": "5.0vp"
+    },
+    {
+      "name": "mtrl_card_elevation",
+      "value": "1.0vp"
+    },
+    {
+      "name": "mtrl_card_spacing",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_chip_pressed_translation_z",
+      "value": "3.0vp"
+    },
+    {
+      "name": "mtrl_chip_text_size",
+      "value": "14.0fp"
+    },
+    {
+      "name": "mtrl_exposed_dropdown_menu_popup_elevation",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_exposed_dropdown_menu_popup_vertical_offset",
+      "value": "1.0vp"
+    },
+    {
+      "name": "mtrl_exposed_dropdown_menu_popup_vertical_padding",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_bottom_padding",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_disabled_elevation",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_disabled_translation_z",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_elevation",
+      "value": "6.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_end_padding",
+      "value": "20.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_end_padding_icon",
+      "value": "20.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_icon_text_spacing",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_min_height",
+      "value": "48.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_min_width",
+      "value": "120.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_start_padding",
+      "value": "20.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_start_padding_icon",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_top_padding",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_translation_z_base",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_translation_z_hovered_focused",
+      "value": "2.0vp"
+    },
+    {
+      "name": "mtrl_extended_fab_translation_z_pressed",
+      "value": "6.0vp"
+    },
+    {
+      "name": "mtrl_fab_elevation",
+      "value": "6.0vp"
+    },
+    {
+      "name": "mtrl_fab_min_touch_target",
+      "value": "48.0vp"
+    },
+    {
+      "name": "mtrl_fab_translation_z_hovered_focused",
+      "value": "2.0vp"
+    },
+    {
+      "name": "mtrl_fab_translation_z_pressed",
+      "value": "6.0vp"
+    },
+    {
+      "name": "mtrl_high_ripple_default_alpha",
+      "value": "0.24vp"
+    },
+    {
+      "name": "mtrl_high_ripple_focused_alpha",
+      "value": "0.4vp"
+    },
+    {
+      "name": "mtrl_high_ripple_hovered_alpha",
+      "value": "0.4vp"
+    },
+    {
+      "name": "mtrl_high_ripple_pressed_alpha",
+      "value": "0.24vp"
+    },
+    {
+      "name": "mtrl_low_ripple_default_alpha",
+      "value": "0.12vp"
+    },
+    {
+      "name": "mtrl_low_ripple_focused_alpha",
+      "value": "0.2vp"
+    },
+    {
+      "name": "mtrl_low_ripple_hovered_alpha",
+      "value": "0.2vp"
+    },
+    {
+      "name": "mtrl_low_ripple_pressed_alpha",
+      "value": "0.12vp"
+    },
+    {
+      "name": "mtrl_min_touch_target_size",
+      "value": "48.0vp"
+    },
+    {
+      "name": "mtrl_navigation_bar_item_default_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_navigation_bar_item_default_margin",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_navigation_elevation",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_navigation_item_horizontal_padding",
+      "value": "22.0vp"
+    },
+    {
+      "name": "mtrl_navigation_item_icon_padding",
+      "value": "14.0vp"
+    },
+    {
+      "name": "mtrl_navigation_item_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_navigation_item_shape_horizontal_margin",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_navigation_item_shape_vertical_margin",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_navigation_rail_active_text_size",
+      "value": "14.0vp"
+    },
+    {
+      "name": "mtrl_navigation_rail_compact_width",
+      "value": "56.0vp"
+    },
+    {
+      "name": "mtrl_navigation_rail_default_width",
+      "value": "72.0vp"
+    },
+    {
+      "name": "mtrl_navigation_rail_elevation",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_navigation_rail_icon_margin",
+      "value": "14.0vp"
+    },
+    {
+      "name": "mtrl_navigation_rail_icon_size",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_navigation_rail_margin",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_navigation_rail_text_bottom_margin",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_navigation_rail_text_size",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_inset",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_inset_extra_small",
+      "value": "2.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_inset_medium",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_inset_small",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_radius",
+      "value": "18.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_size",
+      "value": "40.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_size_extra_small",
+      "value": "20.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_size_medium",
+      "value": "40.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_size_small",
+      "value": "28.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_track_thickness_extra_small",
+      "value": "2.5vp"
+    },
+    {
+      "name": "mtrl_progress_circular_track_thickness_medium",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_progress_circular_track_thickness_small",
+      "value": "3.0vp"
+    },
+    {
+      "name": "mtrl_progress_indicator_full_rounded_corner_radius",
+      "value": "2.0vp"
+    },
+    {
+      "name": "mtrl_progress_track_thickness",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_shape_corner_size_large_component",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_shape_corner_size_medium_component",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_shape_corner_size_small_component",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_slider_halo_radius",
+      "value": "24.0vp"
+    },
+    {
+      "name": "mtrl_slider_label_padding",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_slider_label_radius",
+      "value": "13.0vp"
+    },
+    {
+      "name": "mtrl_slider_label_square_side",
+      "value": "26.0vp"
+    },
+    {
+      "name": "mtrl_slider_thumb_elevation",
+      "value": "1.0vp"
+    },
+    {
+      "name": "mtrl_slider_thumb_radius",
+      "value": "10.0vp"
+    },
+    {
+      "name": "mtrl_slider_tick_min_spacing",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_slider_tick_radius",
+      "value": "1.0vp"
+    },
+    {
+      "name": "mtrl_slider_track_height",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_slider_track_side_padding",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_slider_widget_height",
+      "value": "48.0vp"
+    },
+    {
+      "name": "mtrl_snackbar_action_text_color_alpha",
+      "value": "0.5vp"
+    },
+    {
+      "name": "mtrl_snackbar_background_corner_radius",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_snackbar_background_overlay_color_alpha",
+      "value": "0.8vp"
+    },
+    {
+      "name": "mtrl_snackbar_margin",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_snackbar_message_margin_horizontal",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_snackbar_padding_horizontal",
+      "value": "8.0vp"
+    },
+    {
+      "name": "mtrl_switch_text_padding",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_switch_thumb_elevation",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_switch_thumb_icon_size",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_switch_thumb_size",
+      "value": "32.0vp"
+    },
+    {
+      "name": "mtrl_switch_track_height",
+      "value": "32.0vp"
+    },
+    {
+      "name": "mtrl_switch_track_width",
+      "value": "52.0vp"
+    },
+    {
+      "name": "mtrl_textinput_box_corner_radius_medium",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_textinput_box_corner_radius_small",
+      "value": "0.0vp"
+    },
+    {
+      "name": "mtrl_textinput_box_label_cutout_padding",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_textinput_box_stroke_width_default",
+      "value": "1.0vp"
+    },
+    {
+      "name": "mtrl_textinput_box_stroke_width_focused",
+      "value": "2.0vp"
+    },
+    {
+      "name": "mtrl_textinput_counter_margin_start",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_textinput_end_icon_margin_start",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_textinput_outline_box_expanded_padding",
+      "value": "16.0vp"
+    },
+    {
+      "name": "mtrl_textinput_start_icon_margin_end",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_toolbar_default_height",
+      "value": "56.0vp"
+    },
+    {
+      "name": "mtrl_tooltip_arrowSize",
+      "value": "14.0vp"
+    },
+    {
+      "name": "mtrl_tooltip_cornerSize",
+      "value": "4.0vp"
+    },
+    {
+      "name": "mtrl_tooltip_minHeight",
+      "value": "32.0vp"
+    },
+    {
+      "name": "mtrl_tooltip_minWidth",
+      "value": "32.0vp"
+    },
+    {
+      "name": "mtrl_tooltip_padding",
+      "value": "12.0vp"
+    },
+    {
+      "name": "mtrl_transition_shared_axis_slide_distance",
+      "value": "30.0vp"
+    },
+    {
+      "name": "notification_action_icon_size",
+      "value": "32.0vp"
+    },
+    {
+      "name": "notification_action_text_size",
+      "value": "13.0fp"
+    },
+    {
+      "name": "notification_big_circle_margin",
+      "value": "12.0vp"
+    },
+    {
+      "name": "notification_content_margin_start",
+      "value": "0.0vp"
+    },
+    {
+      "name": "notification_large_icon_height",
+      "value": "64.0vp"
+    },
+    {
+      "name": "notification_large_icon_width",
+      "value": "64.0vp"
+    },
+    {
+      "name": "notification_main_column_padding_top",
+      "value": "0.0vp"
+    },
+    {
+      "name": "notification_media_narrow_margin",
+      "value": "12.0vp"
+    },
+    {
+      "name": "notification_right_icon_size",
+      "value": "16.0vp"
+    },
+    {
+      "name": "notification_right_side_padding_top",
+      "value": "4.0vp"
+    },
+    {
+      "name": "notification_small_icon_background_padding",
+      "value": "3.0vp"
+    },
+    {
+      "name": "notification_small_icon_size_as_large",
+      "value": "24.0vp"
+    },
+    {
+      "name": "notification_subtext_size",
+      "value": "13.0fp"
+    },
+    {
+      "name": "notification_top_pad",
+      "value": "10.0vp"
+    },
+    {
+      "name": "notification_top_pad_large_text",
+      "value": "5.0vp"
+    },
+    {
+      "name": "salt_dimen_height_item",
+      "value": "60.0vp"
+    },
+    {
+      "name": "salt_dimen_height_min",
+      "value": "48.0vp"
+    },
+    {
+      "name": "salt_dimen_padding_dialog",
+      "value": "30.0vp"
+    },
+    {
+      "name": "sliding_pane_detail_pane_width",
+      "value": "300.0vp"
+    },
+    {
+      "name": "splashscreen_icon_mask_size_no_background",
+      "value": "410.0vp"
+    },
+    {
+      "name": "splashscreen_icon_mask_size_with_background",
+      "value": "342.0vp"
+    },
+    {
+      "name": "splashscreen_icon_mask_stroke_no_background",
+      "value": "109.0vp"
+    },
+    {
+      "name": "splashscreen_icon_mask_stroke_with_background",
+      "value": "92.0vp"
+    },
+    {
+      "name": "splashscreen_icon_size_no_background",
+      "value": "288.0vp"
+    },
+    {
+      "name": "splashscreen_icon_size_with_background",
+      "value": "240.0vp"
+    },
+    {
+      "name": "subTextSize",
+      "value": "12.0vp"
+    },
+    {
+      "name": "switcher_elevation",
+      "value": "4.0vp"
+    },
+    {
+      "name": "switcher_height",
+      "value": "26.0vp"
+    },
+    {
+      "name": "switcher_width",
+      "value": "46.0vp"
+    },
+    {
+      "name": "tooltip_corner_radius",
+      "value": "2.0vp"
+    },
+    {
+      "name": "tooltip_horizontal_padding",
+      "value": "16.0vp"
+    },
+    {
+      "name": "tooltip_margin",
+      "value": "8.0vp"
+    },
+    {
+      "name": "tooltip_precise_anchor_extra_offset",
+      "value": "8.0vp"
+    },
+    {
+      "name": "tooltip_precise_anchor_threshold",
+      "value": "96.0vp"
+    },
+    {
+      "name": "tooltip_vertical_padding",
+      "value": "6.5vp"
+    },
+    {
+      "name": "tooltip_y_offset_non_touch",
+      "value": "0.0vp"
+    },
+    {
+      "name": "tooltip_y_offset_touch",
+      "value": "16.0vp"
+    }
+  ]
+}

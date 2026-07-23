@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- 3D isometric open box - empty state illustration -->
+  <!-- Box body -->
+  <polygon points="100,160 30,120 30,80 100,120" fill="#E0E0E0" stroke="#D0D0D0" stroke-width="1"/>
+  <polygon points="100,160 170,120 170,80 100,120" fill="#EEEEEE" stroke="#D0D0D0" stroke-width="1"/>
+  <polygon points="100,120 30,80 100,40 170,80" fill="#F5F5F5" stroke="#D0D0D0" stroke-width="1"/>
+  <!-- Box flaps (open) -->
+  <polygon points="30,80 65,50 100,40 65,70" fill="#F0F0F0" stroke="#D0D0D0" stroke-width="1"/>
+  <polygon points="170,80 135,50 100,40 135,70" fill="#E8E8E8" stroke="#D0D0D0" stroke-width="1"/>
+  <!-- Decorative swirl above box -->
+  <path d="M 120,35 Q 130,20 140,25 Q 150,30 145,20 Q 140,10 150,15" fill="none" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="150" cy="15" r="2.5" fill="#C0C0C0"/>
+</svg>

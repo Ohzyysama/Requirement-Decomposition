@@ -1,0 +1,122 @@
+[
+  {
+    "arId": "AR-13-01",
+    "title": "音频焦点（请求/丢失焦点的状态切换与暂停决策）",
+    "anchor": "model/AudioOutputModel.ets",
+    "message": "feat(audio): 音频焦点管理",
+    "arComment": "// 音频焦点：根据焦点事件与当前播放状态决定下一步播放动作",
+    "arSymbol": "resolveFocusActionG",
+    "arCode": "export function resolveFocusActionG(event: string, playing: boolean): string {\n  if (event === 'gain') {\n    return playing ? 'resume' : 'idle'\n  }\n  if (event === 'lossTransient') {\n    return playing ? 'pause' : 'idle'\n  }\n  if (event === 'lossDuck') {\n    return playing ? 'duck' : 'idle'\n  }\n  if (event === 'loss') {\n    return 'stop'\n  }\n  return 'idle'\n}",
+    "distractorComment": "// 通用工具：将十六进制颜色解析为 RGB 分量（与本需求无关）",
+    "distractorSymbol": "parseHexColorG",
+    "distractorCode": "export function parseHexColorG(hex: string): number[] {\n  let s = hex.charAt(0) === '#' ? hex.slice(1) : hex\n  if (s.length === 3) {\n    s = s.charAt(0) + s.charAt(0) + s.charAt(1) + s.charAt(1) + s.charAt(2) + s.charAt(2)\n  }\n  const r = parseInt(s.slice(0, 2), 16)\n  const g = parseInt(s.slice(2, 4), 16)\n  const b = parseInt(s.slice(4, 6), 16)\n  return [r, g, b]\n}"
+  },
+  {
+    "arId": "AR-13-02",
+    "title": "音量平衡（左右声道增益，-1..1 映射）",
+    "anchor": "model/AudioOutputModel.ets",
+    "message": "feat(audio): 音量平衡",
+    "arComment": "// 音量平衡：将 -1..1 的平衡值映射为左右声道增益系数",
+    "arSymbol": "computeChannelGainsG",
+    "arCode": "export function computeChannelGainsG(balance: number): number[] {\n  let b = balance\n  if (b < -1) {\n    b = -1\n  } else if (b > 1) {\n    b = 1\n  }\n  const left = b <= 0 ? 1 : 1 - b\n  const right = b >= 0 ? 1 : 1 + b\n  const lr = Math.round(left * 1000) / 1000\n  const rr = Math.round(right * 1000) / 1000\n  return [lr, rr]\n}",
+    "distractorComment": "// 通用工具：对数组进行原地去重并保持首次出现顺序（与本需求无关）",
+    "distractorSymbol": "dedupeKeepOrderG",
+    "distractorCode": "export function dedupeKeepOrderG(items: number[]): number[] {\n  const seen: number[] = []\n  const result: number[] = []\n  for (let i = 0; i < items.length; i++) {\n    const v = items[i]\n    if (seen.indexOf(v) < 0) {\n      seen.push(v)\n      result.push(v)\n    }\n  }\n  return result\n}"
+  },
+  {
+    "arId": "AR-13-03",
+    "title": "播放暂停淡入淡出（按时长插值音量包络）",
+    "anchor": "model/AudioPlayerService.ets",
+    "message": "feat(audio): 播放暂停淡入淡出",
+    "arComment": "// 淡入淡出：按总时长与步进生成线性插值的音量包络序列",
+    "arSymbol": "buildFadeEnvelopeG",
+    "arCode": "export function buildFadeEnvelopeG(from: number, to: number, durationMs: number, stepMs: number): number[] {\n  const steps = Math.max(1, Math.floor(durationMs / stepMs))\n  const envelope: number[] = []\n  for (let i = 0; i <= steps; i++) {\n    const ratio = i / steps\n    const v = from + (to - from) * ratio\n    envelope.push(Math.round(v * 1000) / 1000)\n  }\n  return envelope\n}",
+    "distractorComment": "// 通用工具：计算字符串的简单哈希值用于缓存键（与本需求无关）",
+    "distractorSymbol": "simpleStringHashG",
+    "distractorCode": "export function simpleStringHashG(text: string): number {\n  let hash = 5381\n  for (let i = 0; i < text.length; i++) {\n    hash = ((hash << 5) + hash) + text.charCodeAt(i)\n    hash = hash & 0x7fffffff\n  }\n  return hash\n}"
+  },
+  {
+    "arId": "AR-13-04",
+    "title": "DSP数字信号处理（多段增益叠加并限幅）",
+    "anchor": "model/SoundEffectModel.ets",
+    "message": "feat(audio): DSP数字信号处理",
+    "arComment": "// DSP：叠加多段均衡增益（dB）并对总增益做上下限幅",
+    "arSymbol": "mixBandGainsG",
+    "arCode": "export function mixBandGainsG(bands: number[], preamp: number): number {\n  let sum = preamp\n  for (let i = 0; i < bands.length; i++) {\n    sum += bands[i]\n  }\n  const MIN = -24\n  const MAX = 24\n  if (sum < MIN) {\n    return MIN\n  }\n  if (sum > MAX) {\n    return MAX\n  }\n  return Math.round(sum * 10) / 10\n}",
+    "distractorComment": "// 通用工具：格式化字节大小为可读字符串（与本需求无关）",
+    "distractorSymbol": "formatByteSizeG",
+    "distractorCode": "export function formatByteSizeG(bytes: number): string {\n  const units: string[] = ['B', 'KB', 'MB', 'GB']\n  let i = 0\n  let v = bytes\n  while (v >= 1024 && i < units.length - 1) {\n    v = v / 1024\n    i++\n  }\n  return v.toFixed(1) + units[i]\n}"
+  },
+  {
+    "arId": "AR-14-01",
+    "title": "启动自动打开播放页",
+    "anchor": "model/LaboratoryModel.ets",
+    "message": "feat(lab): 启动自动打开播放页",
+    "arComment": "// 启动跳转：仅当开关开启且存在上次播放曲目时才自动进入播放页",
+    "arSymbol": "shouldOpenPlayerOnLaunchG",
+    "arCode": "export function shouldOpenPlayerOnLaunchG(enabled: boolean, hasLastSong: boolean, fromWidget: boolean): boolean {\n  if (fromWidget) {\n    return true\n  }\n  if (!enabled) {\n    return false\n  }\n  return hasLastSong\n}",
+    "distractorComment": "// 通用工具：判断给定年份是否为闰年（与本需求无关）",
+    "distractorSymbol": "isLeapYearG",
+    "distractorCode": "export function isLeapYearG(year: number): boolean {\n  if (year % 4 !== 0) {\n    return false\n  }\n  if (year % 100 !== 0) {\n    return true\n  }\n  return year % 400 === 0\n}"
+  },
+  {
+    "arId": "AR-14-02",
+    "title": "立体歌词（按深度计算缩放透明度）",
+    "anchor": "model/LaboratoryModel.ets",
+    "message": "feat(lab): 立体歌词",
+    "arComment": "// 立体歌词：依据行与当前行的深度差计算缩放与透明度",
+    "arSymbol": "computeLyricDepthStyleG",
+    "arCode": "export function computeLyricDepthStyleG(lineIndex: number, currentIndex: number): number[] {\n  const depth = Math.abs(lineIndex - currentIndex)\n  let scale = 1 - depth * 0.12\n  if (scale < 0.5) {\n    scale = 0.5\n  }\n  let opacity = 1 - depth * 0.25\n  if (opacity < 0.2) {\n    opacity = 0.2\n  }\n  const s = Math.round(scale * 100) / 100\n  const o = Math.round(opacity * 100) / 100\n  return [s, o]\n}",
+    "distractorComment": "// 通用工具：将驼峰命名转换为短横线命名（与本需求无关）",
+    "distractorSymbol": "camelToKebabG",
+    "distractorCode": "export function camelToKebabG(name: string): string {\n  let out = ''\n  for (let i = 0; i < name.length; i++) {\n    const c = name.charAt(i)\n    const lower = c.toLowerCase()\n    if (c !== lower && i > 0) {\n      out += '-'\n    }\n    out += lower\n  }\n  return out\n}"
+  },
+  {
+    "arId": "AR-15-01",
+    "title": "帮助与FAQ（关键字过滤问答列表）",
+    "anchor": "model/HelpAndFeedbackModel.ets",
+    "message": "feat(help): 帮助与FAQ",
+    "arComment": "// 帮助FAQ：按关键字在问题与答案中做不区分大小写的过滤",
+    "arSymbol": "filterFaqByKeywordG",
+    "arCode": "export function filterFaqByKeywordG(faqs: Map<string, string>, keyword: string): string[] {\n  const kw = keyword.trim().toLowerCase()\n  const matched: string[] = []\n  if (kw.length === 0) {\n    faqs.forEach((a: string, q: string) => { matched.push(q) })\n    return matched\n  }\n  faqs.forEach((answer: string, question: string) => {\n    const hay = (question + ' ' + answer).toLowerCase()\n    if (hay.indexOf(kw) >= 0) {\n      matched.push(question)\n    }\n  })\n  return matched\n}",
+    "distractorComment": "// 通用工具：将秒数格式化为 mm:ss 时间文本（与本需求无关）",
+    "distractorSymbol": "formatSecondsClockG",
+    "distractorCode": "export function formatSecondsClockG(total: number): string {\n  const t = Math.max(0, Math.floor(total))\n  const m = Math.floor(t / 60)\n  const s = t % 60\n  const mm = m < 10 ? '0' + m : '' + m\n  const ss = s < 10 ? '0' + s : '' + s\n  return mm + ':' + ss\n}"
+  },
+  {
+    "arId": "AR-15-02",
+    "title": "用户反馈（内容长度与联系方式校验）",
+    "anchor": "model/HelpAndFeedbackModel.ets",
+    "message": "feat(help): 用户反馈",
+    "arComment": "// 反馈校验：检查反馈内容长度并对联系方式做基础格式校验",
+    "arSymbol": "validateFeedbackG",
+    "arCode": "export function validateFeedbackG(content: string, contact: string): string {\n  const text = content.trim()\n  if (text.length < 5) {\n    return 'contentTooShort'\n  }\n  if (text.length > 500) {\n    return 'contentTooLong'\n  }\n  if (contact.length > 0) {\n    const okMail = contact.indexOf('@') > 0 && contact.indexOf('.') > 0\n    const okPhone = contact.length >= 6 && !Number.isNaN(Number(contact))\n    if (!okMail && !okPhone) {\n      return 'contactInvalid'\n    }\n  }\n  return 'ok'\n}",
+    "distractorComment": "// 通用工具：计算两个整数的最大公约数（与本需求无关）",
+    "distractorSymbol": "greatestCommonDivisorG",
+    "distractorCode": "export function greatestCommonDivisorG(a: number, b: number): number {\n  let x = Math.abs(a)\n  let y = Math.abs(b)\n  while (y !== 0) {\n    const t = y\n    y = x % y\n    x = t\n  }\n  return x\n}"
+  },
+  {
+    "arId": "AR-15-03",
+    "title": "关于与版本/检查更新（语义版本号比较）",
+    "anchor": "model/AboutModel.ets",
+    "message": "feat(about): 关于与版本/检查更新",
+    "arComment": "// 检查更新：逐段比较语义版本号判断远端是否更新",
+    "arSymbol": "compareSemverG",
+    "arCode": "export function compareSemverG(local: string, remote: string): number {\n  const a = local.split('.')\n  const b = remote.split('.')\n  const len = Math.max(a.length, b.length)\n  for (let i = 0; i < len; i++) {\n    const x = i < a.length ? parseInt(a[i], 10) : 0\n    const y = i < b.length ? parseInt(b[i], 10) : 0\n    if (x > y) {\n      return 1\n    }\n    if (x < y) {\n      return -1\n    }\n  }\n  return 0\n}",
+    "distractorComment": "// 通用工具：判断字符串是否为回文（与本需求无关）",
+    "distractorSymbol": "isPalindromeG",
+    "distractorCode": "export function isPalindromeG(text: string): boolean {\n  const s = text.toLowerCase()\n  let i = 0\n  let j = s.length - 1\n  while (i < j) {\n    if (s.charAt(i) !== s.charAt(j)) {\n      return false\n    }\n    i++\n    j--\n  }\n  return true\n}"
+  },
+  {
+    "arId": "AR-15-04",
+    "title": "开源致谢（按名称排序去重许可证列表）",
+    "anchor": "model/CreditsModel.ets",
+    "message": "feat(about): 开源致谢",
+    "arComment": "// 开源致谢：对许可证条目按名称去重并按字典序排序",
+    "arSymbol": "sortDedupeLicensesG",
+    "arCode": "export function sortDedupeLicensesG(names: string[]): string[] {\n  const seen: Set<string> = new Set<string>()\n  const result: string[] = []\n  for (let i = 0; i < names.length; i++) {\n    const key = names[i].trim().toLowerCase()\n    if (key.length > 0 && !seen.has(key)) {\n      seen.add(key)\n      result.push(names[i].trim())\n    }\n  }\n  result.sort((p: string, q: string) => p.toLowerCase() < q.toLowerCase() ? -1 : 1)\n  return result\n}",
+    "distractorComment": "// 通用工具：将秒数拆分为时分秒数组（与本需求无关）",
+    "distractorSymbol": "splitDurationPartsG",
+    "distractorCode": "export function splitDurationPartsG(totalSec: number): number[] {\n  let t = Math.max(0, Math.floor(totalSec))\n  const h = Math.floor(t / 3600)\n  t = t % 3600\n  const m = Math.floor(t / 60)\n  const s = t % 60\n  return [h, m, s]\n}"
+  }
+]
