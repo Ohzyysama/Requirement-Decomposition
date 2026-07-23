@@ -27,7 +27,7 @@ def reject_zero_max_feasibility_refinement_depth(config: Optional[Dict[str, Any]
     if v <= 0:
         raise ValueError(
             f"{_MAX_FEASIBILITY_REFINEMENT_DEPTH_KEY} 须为正整数；"
-            "请省略该键以使用默认值 3。"
+            "请省略该键以使用默认值 1。"
             "若需关闭可实现性驱动的子树自动细化，请设置 enable_feasibility_refinement 为 false。"
         )
 
@@ -44,7 +44,7 @@ class CoordinationRequest(BaseModel):
             "(1) 编排/阈值——仅协调器读取，不会注入 M1 的 LLM 用户消息："
             "consistency_pass_threshold、consistency_inner_max_retries（默认 1）、"
             "continue_pipeline_after_consistency_exhausted、enable_feasibility_refinement、"
-            "max_feasibility_refinement_depth（当前拆分根下最大非根深度，默认 3，不含根；请求体中勿传 0 或负数，省略该键即用默认）、"
+            "max_feasibility_refinement_depth（当前拆分根下最大非根深度，默认 1，不含根；请求体中勿传 0 或负数，省略该键即用默认）、"
             "version_selection；"
             "(2) LLM 覆盖——经瘦身传入 M1/M2：model、temperature（M2）、instructor_mode、max_tokens（M1 Dependency）；"
             "一致性内层重试时协调器可能写入 split_retry_hints。"

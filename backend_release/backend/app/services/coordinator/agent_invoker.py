@@ -32,6 +32,8 @@ from app.services.agents.M2.agents.m2_consistency_agent import M2ConsistencyEval
 from app.services.agents.M2.agents.m2_feasibility_agent import M2FeasibilityEvaluatorAgent
 from app.services.agents.M2.agents.m2_integrator_agent import M2EvaluationIntegratorAgent
 from app.services.coordinator.tree_utils import (
+    collect_subtree_ids_from_rows,
+    norm_function_id,
     sub_requirement_list_stats,
 )
 from app.schemas.evaluation_episodes import (
@@ -44,6 +46,19 @@ logger = logging.getLogger(__name__)
 
 # M2 评估前从功能列表中排除的节点 id（如 Normalizer 派生的占位根，不参与细评）
 _M2_EXCLUDED_FUNCTION_IDS = frozenset({"F-1"})
+
+# ── 可实现性评估：触发自动细化的 issue_type 白名单 ──
+_FEASIBILITY_SPLIT_TRIGGER_ISSUE_TYPES: frozenset[str] = frozenset({
+    "resource_constraint_mismatch",    # error 级：资源约束严重不匹配
+    "function_point_scale_issue",      # AFP 严重超标（需额外验证 evidence）
+})
+
+# ── 可实现性评估：只入报告、不触发自动细化的 issue_type ──
+_FEASIBILITY_REPORT_ONLY_ISSUE_TYPES: frozenset[str] = frozenset({
+    "low_cohesion",                    # 低内聚：应由人工判断是否重拆
+    "workload_exceeded",               # 工作量偏高：大型项目正常现象
+    "high_technical_complexity",       # 技术复杂：需人工评估，不应自动拆
+})
 
 
 class AgentInvoker:
@@ -203,26 +218,103 @@ class AgentInvoker:
         )
 
     @staticmethod
-    def _extract_feasibility_failed_node_ids(feas: Dict[str, Any]) -> List[str]:
-        """从可实现性评估 dict 收集未通过规则涉及的节点 id。"""
+    def _reduce_to_top_level_ancestors(
+        failed_ids: set,
+        function_list: Optional[List[Dict[str, Any]]],
+    ) -> List[str]:
+        """向上归约：若某节点及其祖先都在失败集，移除子孙，只保留最顶层祖先。"""
+        if not failed_ids or not function_list:
+            return sorted(failed_ids)
+        id_to_row: Dict[str, Dict[str, Any]] = {}
+        for row in function_list:
+            if isinstance(row, dict):
+                nid = norm_function_id(row.get("id"))
+                if nid:
+                    id_to_row[nid] = row
+
+        result = set(failed_ids)
+        for nid in list(result):
+            row = id_to_row.get(nid, {})
+            pid = norm_function_id(row.get("parent_id"))
+            current = pid
+            while current:
+                if current in result:
+                    result.discard(nid)  # 祖先也在失败集 → 移除子孙
+                    break
+                parent_row = id_to_row.get(current, {})
+                current = norm_function_id(parent_row.get("parent_id"))
+        return sorted(result)
+
+    @staticmethod
+    def _extract_feasibility_failed_node_ids(
+        feas: Dict[str, Any],
+        function_list: Optional[List[Dict[str, Any]]] = None,
+    ) -> List[str]:
+        """从可实现性评估 dict 收集需要自动细化的节点 id。
+
+        分级规则：
+          - severity == "error"                         → 收集
+          - severity == "warning" + 触发白名单           → 收集（需额外验证）
+          - severity == "warning" + REPORT_ONLY          → 跳过（只入报告）
+          - granularity_issue                           → 只收集 too_coarse，排除 too_fine
+        """
         out: List[str] = []
         seen: set = set()
 
-        def _collect_from_rule(item: Any) -> None:
-            if not isinstance(item, dict):
-                return
-            if item.get("passed") is True:
-                return
-            for n in item.get("affected_nodes") or []:
-                s = str(n).strip()
-                if s and s not in seen:
-                    seen.add(s)
-                    out.append(s)
+        def _add(nid: str) -> None:
+            s = str(nid).strip()
+            if s and s not in seen:
+                seen.add(s)
+                out.append(s)
 
-        for item in feas.get("critical_issues") or []:
-            _collect_from_rule(item)
-        for item in feas.get("rule_results") or []:
-            _collect_from_rule(item)
+        for item in (feas.get("rule_results") or []):
+            if not isinstance(item, dict):
+                continue
+            if item.get("passed") is True:
+                continue
+
+            severity = str(item.get("severity", "")).lower()
+            issue_type = str(item.get("issue_type", ""))
+
+            # ── error 级一律收集 ──
+            if severity == "error":
+                for n in item.get("affected_nodes") or []:
+                    _add(str(n).strip())
+                continue
+
+            # ── warning 级：只收集白名单中的类型 ──
+            if issue_type in _FEASIBILITY_REPORT_ONLY_ISSUE_TYPES:
+                continue
+
+            # ── granularity_issue：只收集 too_coarse ──
+            if issue_type == "granularity_issue":
+                evidence = item.get("evidence") or {}
+                too_coarse = evidence.get("too_coarse_functions") or []
+                for nid_val in too_coarse:
+                    _add(str(nid_val).strip())
+                continue
+
+            # ── function_point_scale_issue：验证 evidence 中 AFP 是否确实严重超标 ──
+            if issue_type == "function_point_scale_issue":
+                evidence = item.get("evidence") or {}
+                threshold_val = evidence.get("threshold", 25)
+                # 仅当阈值 > 50（即 AFP > 50）时才触发自动细化
+                try:
+                    if float(threshold_val) < 50:
+                        continue
+                except (TypeError, ValueError):
+                    continue
+
+            # ── 默认收集（白名单中的其他类型）──
+            if issue_type in _FEASIBILITY_SPLIT_TRIGGER_ISSUE_TYPES:
+                for n in item.get("affected_nodes") or []:
+                    _add(str(n).strip())
+
+        # 向上归约去重
+        if function_list:
+            out = AgentInvoker._reduce_to_top_level_ancestors(
+                set(out), function_list
+            )
         return out
 
     @staticmethod

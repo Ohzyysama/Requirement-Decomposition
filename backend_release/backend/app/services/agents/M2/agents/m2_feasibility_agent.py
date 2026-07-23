@@ -28,8 +28,9 @@ from app.schemas.evaluation import (
     FPAAssessmentResult,
     FPAFunctionClassification,
     CohesionAssessmentResult,
-    CohesionAssessmentItem
-
+    CohesionAssessmentItem,
+    DeveloperEffortEstimate,
+    PerFunctionEffortEstimateResult,
 )
 from pydantic import BaseModel, Field
 
@@ -69,7 +70,7 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
         }
 
     async def execute(self, input_data: AgentInput) -> BaseAgentOutput:
-        """执行可实现性评估（集成FPA分析）"""
+        """执行可实现性评估（集成FPA分析 + LLM开发时间估算）"""
         try:
             art = input_data.artifacts or {}
             function_list = art.get("function_list", []) if isinstance(art, dict) else []
@@ -81,10 +82,25 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
             resource_constraints = context.get("resource_constraints", {})
             platform_constraints = context.get("platform_constraints", {})
 
-            logger.info(f"[{input_data.task_id}] 开始可实现性评估（集成FPA）")
+            logger.info(f"[{input_data.task_id}] 开始可实现性评估（集成FPA + LLM估算）")
+
+            # ── 新增：LLM 批量 FPA 分类 + 开发时间估算 ──
+            llm_effort_result = await self._perform_llm_effort_estimation(
+                function_list, requirement_text, input_data
+            )
+            llm_estimates: Dict[str, DeveloperEffortEstimate] = {}
+            if llm_effort_result and llm_effort_result.estimates:
+                for est in llm_effort_result.estimates:
+                    llm_estimates[est.function_id] = est
+                logger.info(
+                    f"[{input_data.task_id}] LLM 估算完成，"
+                    f"覆盖 {len(llm_estimates)}/{len(function_list)} 个功能"
+                )
 
             # 执行FPA功能点分析（针对每个子功能）
-            fpa_results = await self._perform_per_function_fpa_analysis(function_list, requirement_text, input_data)
+            fpa_results = await self._perform_per_function_fpa_analysis(
+                function_list, requirement_text, input_data, llm_estimates
+            )
 
             # 执行各项可实现性检查（基于单个功能点）
             rule_results = []
@@ -93,19 +109,19 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
             llm_cohesion_result = await self._check_cohesion_degree_llm(function_list, requirement_text, input_data)
             rule_results.append(llm_cohesion_result)
 
-            # 2. 功能点规模评估（基于单个功能点）
-            rule_results.append(self._check_function_point_scale_per_function(fpa_results, function_list))
+            # 2. 功能点规模评估（基于单个功能点 + LLM估算）
+            rule_results.append(self._check_function_point_scale_per_function(fpa_results, function_list, llm_estimates))
 
-            # 3. 工作量估算评估（基于单个功能点）
-            rule_results.append(self._check_workload_estimation_per_function(fpa_results, resource_constraints, function_list))
+            # 3. 工作量估算评估（基于单个功能点 + LLM估算）
+            rule_results.append(self._check_workload_estimation_per_function(fpa_results, resource_constraints, function_list, llm_estimates))
 
-            # 4. 粒度合理性评估（基于单个功能点）
-            rule_results.append(self._check_granularity_reasonableness_per_function(fpa_results, function_list))
+            # 4. 粒度合理性评估（基于单个功能点 + LLM估算）
+            rule_results.append(self._check_granularity_reasonableness_per_function(fpa_results, function_list, llm_estimates))
 
             # 5. 资源约束匹配评估（基于单个功能点）
             rule_results.append(self._check_resource_constraint_match_per_function(fpa_results, resource_constraints, function_list))
 
-            # 6. 技术复杂性评估（基于单个功能点）
+            # 6. 技术复杂性评估（基于单个功能点 — 放宽判定）
             rule_results.append(self._check_technical_complexity_per_function(fpa_results, function_list))
 
             # 构建评估结果
@@ -117,11 +133,26 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
                 project_scale_classification=self._classify_project_scale(sum(fpa_result.total_afp for fpa_result in fpa_results))
             )
 
+            # ── 将 LLM 估算结果写入 evidence ──
+            evidence = self._extract_evidence(evaluation_result)
+            if llm_effort_result:
+                evidence.append(
+                    f"LLM开发时间估算: {len(llm_estimates)}个功能已估算"
+                )
+
             return BaseAgentOutput(
                 result=response.model_dump(),
                 quality_flags=self._extract_quality_flags(evaluation_result),
                 warnings=self._extract_warnings(evaluation_result),
-                evidence=self._extract_evidence(evaluation_result)
+                evidence=evidence,
+            )
+
+        except Exception as e:
+            logger.error(f"可实现性评估失败: {str(e)}", exc_info=True)
+            return BaseAgentOutput(
+                result={},
+                quality_flags=["execution_error"],
+                warnings=[f"可实现性评估执行失败: {str(e)}"]
             )
 
         except Exception as e:
@@ -136,7 +167,8 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
         self,
         function_list: List[Dict[str, Any]],
         requirement_text: str,
-        input_data: AgentInput
+        input_data: AgentInput,
+        llm_estimates: Optional[Dict[str, DeveloperEffortEstimate]] = None,
     ) -> List[FPAAssessmentResult]:
         """对每个子功能执行独立的FPA功能点分析"""
         try:
@@ -146,8 +178,10 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
             overall_tcf = self._calculate_tcf(function_list, requirement_text)
             
             for func in function_list:
-                # 对每个功能单独分类和计算
-                classification = self._classify_function(func, requirement_text)
+                # 对每个功能单独分类和计算（优先使用 LLM 估算结果）
+                func_id = func.get("id", "")
+                llm_est = (llm_estimates or {}).get(func_id)
+                classification = self._classify_function(func, requirement_text, llm_est)
                 
                 # 单个功能的UFP就是该功能的功能点
                 function_ufp = classification.function_points
@@ -206,26 +240,42 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
             # 返回空列表
             return []
 
-    def _classify_function(self, func: Dict[str, Any], requirement_text: str) -> FPAFunctionClassification:
-        """功能分类"""
+    def _classify_function(
+        self,
+        func: Dict[str, Any],
+        requirement_text: str,
+        llm_estimate: Optional[DeveloperEffortEstimate] = None,
+    ) -> FPAFunctionClassification:
+        """功能分类 — 优先使用 LLM 估算，回退到关键词匹配"""
         func_id = func.get("id", "")
         func_desc = func.get("desc", "") + " " + func.get("title", "")
 
-        # 基于关键词分析确定功能类型
+        # 优先使用 LLM 估算结果
+        if llm_estimate is not None and llm_estimate.confidence >= 0.6:
+            func_type = llm_estimate.function_type
+            complexity = llm_estimate.complexity
+            function_points = self._calculate_function_points(func_type, complexity)
+            return FPAFunctionClassification(
+                function_id=func_id,
+                function_type=func_type,
+                complexity=complexity,
+                function_points=function_points,
+                description=(
+                    f"功能{func_id} LLM分类为{func_type}，复杂度{complexity}"
+                    f"（理由: {llm_estimate.classification_reason}）"
+                ),
+            )
+
+        # 回退到关键词匹配
         func_type = self._determine_function_type(func_desc)
-
-        # 基于描述复杂度确定复杂度等级
         complexity = self._determine_complexity(func_desc)
-
-        # 计算功能点数
         function_points = self._calculate_function_points(func_type, complexity)
-
         return FPAFunctionClassification(
             function_id=func_id,
             function_type=func_type,
             complexity=complexity,
             function_points=function_points,
-            description=f"功能{func_id}分类为{func_type}，复杂度{complexity}"
+            description=f"功能{func_id} 规则分类为{func_type}，复杂度{complexity}",
         )
 
     def _determine_function_type(self, func_desc: str) -> str:
@@ -383,7 +433,110 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
         else:
             return 5  # 显著影响
 
-    def _estimate_duration_cocomo(self, total_afp: float) -> float:
+    @staticmethod
+    def _should_trigger_refinement(
+        llm_estimate: Optional[DeveloperEffortEstimate],
+        fpa_afp: float,
+        fpa_workload: float,
+    ) -> tuple:
+        """综合 LLM 估算和 FPA 公式判断是否需要触发细化。
+
+        判断优先级：
+          1. LLM 明确建议拆分 → 触发
+          2. LLM 估算中级开发者 > 15 天 → 触发
+          3. FPA 公式兜底：AFP > 50 → 触发
+          4. 其他情况 → 不触发
+        """
+        if llm_estimate is not None:
+            # 优先级 1：LLM 明确建议
+            if llm_estimate.needs_further_split:
+                return True, llm_estimate.split_reason or "LLM 评估建议进一步拆分"
+            # 优先级 2：中级开发者估算
+            if llm_estimate.mid_dev_days > 15:
+                return True, (
+                    f"中级开发者预计需 {llm_estimate.mid_dev_days:.0f} 天，"
+                    f"超过单功能合理上限 15 天"
+                )
+
+        # 优先级 3：FPA 公式兜底
+        if fpa_afp > 50:
+            return True, f"FPA 功能点 {fpa_afp:.1f} > 50，规模过大"
+
+        return False, None
+
+    async def _perform_llm_effort_estimation(
+        self,
+        function_list: List[Dict[str, Any]],
+        requirement_text: str,
+        input_data: AgentInput,
+    ) -> Optional[PerFunctionEffortEstimateResult]:
+        """调用 LLM 对每个子功能做 FPA 分类 + 开发时间估算。
+
+        返回 None 表示 LLM 调用失败，调用方应回退到纯规则模式。
+        """
+        try:
+            # 构建功能描述列表
+            func_desc_lines: List[str] = []
+            for func in function_list:
+                fid = func.get("id", "")
+                title = func.get("title", "")
+                desc = func.get("desc", "")
+                func_desc_lines.append(
+                    f"- [{fid}] {title}: {desc}"
+                )
+            func_list_text = "\n".join(func_desc_lines)
+
+            messages = [
+                {
+                    "role": "system",
+                    "content": (
+                        "你是一个有 10 年经验的软件架构师和全栈开发者。"
+                        "请对以下子功能列表中的每一个功能，完成两件事：\n\n"
+                        "1. 【FPA 分类】根据 IFPUG 标准判断功能类型"
+                        "（EI 外部输入/EO 外部输出/EQ 外部查询/"
+                        "ILF 内部逻辑文件/EIF 外部接口文件）和复杂度"
+                        "（LOW/MEDIUM/HIGH）。不要仅凭关键词匹配，"
+                        "要理解功能描述的语义。\n\n"
+                        "2. 【开发时间估算】假设是一个典型的中型互联网项目"
+                        "（前后端分离、有数据库、有基本的 CI/CD），"
+                        "分别估算三种经验水平的开发者实现该功能需要的"
+                        "**开发天数**（含自测，含 20% buffer，"
+                        "不含需求文档、code review、部署）：\n"
+                        "   - junior_dev_days: 1-2年经验的初级开发者\n"
+                        "   - mid_dev_days: 3-5年经验的中级开发者\n"
+                        "   - senior_dev_days: 5年+经验的高级开发者\n\n"
+                        "估算时请考虑：CRUD 复杂度、业务逻辑复杂度、"
+                        "前后端工作量比例、是否需要对接第三方服务、"
+                        "测试和联调时间。\n\n"
+                        "3. 【拆分建议】基于中级开发者的估算，如果超过 15 天，"
+                        "请判断是否建议进一步拆分（needs_further_split），"
+                        "并说明拆分的具体方向（split_reason）。"
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": (
+                        f"原始需求：{requirement_text}\n\n"
+                        f"子功能列表（共 {len(function_list)} 个）：\n"
+                        f"{func_list_text}\n\n"
+                        "请对每个子功能逐一输出估算结果。"
+                    ),
+                },
+            ]
+
+            llm_model = (input_data.config or {}).get("model") or "qwen-coder-plus"
+            result = await self._call_llm_with_schema(
+                llm_model=llm_model,
+                messages=messages,
+                response_model=PerFunctionEffortEstimateResult,
+            )
+            return result
+
+        except Exception as e:
+            logger.warning(
+                f"LLM 开发时间估算失败，回退到纯规则模式: {str(e)}"
+            )
+            return None
         """基于COCOMO模型估算工期"""
         # COCOMO基础模型：工作量 = a × (规模)^b;
         # 工期 = c × (工作量)^d
@@ -534,19 +687,37 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
             )
 
 
-    def _check_function_point_scale_per_function(self, fpa_results: List[FPAAssessmentResult], function_list: List[Dict[str, Any]]) -> RuleCheckResult:
-        """检查单个功能点规模（基于单个功能点）"""
+    def _check_function_point_scale_per_function(
+        self,
+        fpa_results: List[FPAAssessmentResult],
+        function_list: List[Dict[str, Any]],
+        llm_estimates: Optional[Dict[str, DeveloperEffortEstimate]] = None,
+    ) -> RuleCheckResult:
+        """检查单个功能点规模（放宽阈值 + LLM估算辅助）"""
         try:
             affected_nodes = []
-            
+            _FPA_WARNING_THRESHOLD = 25  # 放宽：15 → 25
+
             for i, fpa_result in enumerate(fpa_results):
                 function_afp = fpa_result.total_afp
-                
-                # 单个功能点规模评估标准
-                if function_afp > 15:  # 大型功能
-                    function_id = function_list[i].get("id", f"function_{i}")
+                function_id = function_list[i].get("id", f"function_{i}")
+
+                # 使用综合判断
+                llm_est = (llm_estimates or {}).get(function_id)
+                should_split, reason = self._should_trigger_refinement(
+                    llm_est, function_afp, fpa_result.estimated_workload
+                )
+
+                if should_split:
                     affected_nodes.append(function_id)
-            
+                elif function_afp > _FPA_WARNING_THRESHOLD:
+                    # 超过 warning 阈值但未达触发条件 → warning（不触发自动细化）
+                    logger.info(
+                        f"[feasibility_002] {function_id} AFP={function_afp:.1f} "
+                        f"超过 warning 阈值 {_FPA_WARNING_THRESHOLD}，"
+                        f"但未达自动细化条件"
+                    )
+
             if affected_nodes:
                 return RuleCheckResult(
                     rule_id="feasibility_002",
@@ -554,12 +725,16 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
                     category=RuleCategory.FEASIBILITY,
                     severity=RuleSeverity.WARNING,
                     issue_type=IssueType.FUNCTION_POINT_SCALE_ISSUE,
-                    description=f"发现{len(affected_nodes)}个功能点规模过大的子功能",
+                    description=f"发现{len(affected_nodes)}个功能点规模严重过大的子功能",
                     affected_nodes=affected_nodes,
                     affected_dependencies=[],
                     recommendation="大型功能建议进一步拆分以降低实现复杂度",
-                    evidence={"affected_functions": affected_nodes, "threshold": 15},
-                    passed=False
+                    evidence={
+                        "affected_functions": affected_nodes,
+                        "warning_threshold": _FPA_WARNING_THRESHOLD,
+                        "split_trigger_threshold": 50,
+                    },
+                    passed=False,
                 )
             else:
                 return RuleCheckResult(
@@ -591,19 +766,33 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
                 passed=False
             )
 
-    def _check_workload_estimation_per_function(self, fpa_results: List[FPAAssessmentResult], resource_constraints: Dict[str, Any], function_list: List[Dict[str, Any]]) -> RuleCheckResult:
-        """检查单个功能工作量估算（基于单个功能点）"""
+    def _check_workload_estimation_per_function(
+        self,
+        fpa_results: List[FPAAssessmentResult],
+        resource_constraints: Dict[str, Any],
+        function_list: List[Dict[str, Any]],
+        llm_estimates: Optional[Dict[str, DeveloperEffortEstimate]] = None,
+    ) -> RuleCheckResult:
+        """检查单个功能工作量估算（放宽阈值：0.5→1.0人月）"""
         try:
             affected_nodes = []
-            
+            _WORKLOAD_WARNING_THRESHOLD = 1.0  # 放宽：0.5 → 1.0
+
             for i, fpa_result in enumerate(fpa_results):
                 function_workload = fpa_result.estimated_workload
-                
-                # 单个功能工作量评估标准
-                if function_workload > 0.5:  # 超过0.5人月为高工作量功能
+
+                # 单个功能工作量评估标准（放宽后）
+                if function_workload > _WORKLOAD_WARNING_THRESHOLD:
                     function_id = function_list[i].get("id", f"function_{i}")
-                    affected_nodes.append(function_id)
-            
+                    # 使用综合判断：仅 LLM 估算也认为过大时才收集
+                    llm_est = (llm_estimates or {}).get(function_id)
+                    if llm_est is not None and llm_est.mid_dev_days > 15:
+                        affected_nodes.append(function_id)
+                    elif function_workload > 2.0:
+                        # 兜底：超过 2.0 人月，即使没有 LLM 估算也收集
+                        affected_nodes.append(function_id)
+                    # 否则仅 warning 级别的报告，不收集节点
+
             if affected_nodes:
                 return RuleCheckResult(
                     rule_id="feasibility_003",
@@ -615,8 +804,11 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
                     affected_nodes=affected_nodes,
                     affected_dependencies=[],
                     recommendation="高工作量功能建议重新评估或分阶段实现",
-                    evidence={"affected_functions": affected_nodes, "threshold": 0.5},
-                    passed=False
+                    evidence={
+                        "affected_functions": affected_nodes,
+                        "warning_threshold": _WORKLOAD_WARNING_THRESHOLD,
+                    },
+                    passed=False,
                 )
             else:
                 return RuleCheckResult(
@@ -649,35 +841,47 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
             )
 
 
-    def _check_granularity_reasonableness_per_function(self, fpa_results: List[FPAAssessmentResult], function_list: List[Dict[str, Any]]) -> RuleCheckResult:
-        """检查单个功能粒度合理性（基于单个功能点）"""
+    def _check_granularity_reasonableness_per_function(
+        self,
+        fpa_results: List[FPAAssessmentResult],
+        function_list: List[Dict[str, Any]],
+        llm_estimates: Optional[Dict[str, DeveloperEffortEstimate]] = None,
+    ) -> RuleCheckResult:
+        """检查单个功能粒度合理性（放宽阈值 + 区分 too_coarse/too_fine 触发）"""
         try:
-            too_coarse_nodes = []  # 粒度过粗的功能
-            too_fine_nodes = []    # 粒度过细的功能
-            
+            too_coarse_nodes = []  # 粒度过粗的功能（触发细化）
+            too_fine_nodes = []    # 粒度过细的功能（仅报告，不触发拆分）
+            _TOO_COARSE_THRESHOLD = 25  # 放宽：15 → 25
+
             for i, fpa_result in enumerate(fpa_results):
                 function_afp = fpa_result.total_afp
                 function_id = function_list[i].get("id", f"function_{i}")
-                
+
                 # 单个功能粒度评估标准
                 if function_afp < 1:  # 粒度过细
                     too_fine_nodes.append(function_id)
-                elif function_afp > 15:  # 粒度过粗
-                    too_coarse_nodes.append(function_id)
-            
+                elif function_afp > _TOO_COARSE_THRESHOLD:  # 粒度过粗
+                    # 综合 LLM 估算判断
+                    llm_est = (llm_estimates or {}).get(function_id)
+                    _, should_split = self._should_trigger_refinement(
+                        llm_est, function_afp, fpa_result.estimated_workload
+                    )
+                    if should_split:
+                        too_coarse_nodes.append(function_id)
+
             if too_coarse_nodes or too_fine_nodes:
                 description_parts = []
                 if too_coarse_nodes:
                     description_parts.append(f"{len(too_coarse_nodes)}个功能粒度过粗")
                 if too_fine_nodes:
                     description_parts.append(f"{len(too_fine_nodes)}个功能粒度过细")
-                
+
                 recommendation_parts = []
                 if too_coarse_nodes:
                     recommendation_parts.append("粒度过粗功能建议进一步拆分")
                 if too_fine_nodes:
                     recommendation_parts.append("粒度过细功能建议合并相关功能")
-                
+
                 return RuleCheckResult(
                     rule_id="feasibility_004",
                     rule_name="粒度合理性评估",
@@ -685,15 +889,15 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
                     severity=RuleSeverity.WARNING,
                     issue_type=IssueType.GRANULARITY_ISSUE,
                     description=f"发现{'，'.join(description_parts)}",
-                    affected_nodes=too_coarse_nodes + too_fine_nodes,
+                    affected_nodes=too_coarse_nodes,  # 仅 too_coarse 进入 affected_nodes
                     affected_dependencies=[],
-                    recommendation="; ".join(recommendation_parts),
+                    recommendation="; ".join(recommendation_parts) if recommendation_parts else "",
                     evidence={
                         "too_coarse_functions": too_coarse_nodes,
                         "too_fine_functions": too_fine_nodes,
-                        "thresholds": {"too_fine": 1, "too_coarse": 15}
+                        "thresholds": {"too_fine": 1, "too_coarse": _TOO_COARSE_THRESHOLD},
                     },
-                    passed=False
+                    passed=False,
                 )
             else:
                 return RuleCheckResult(
@@ -790,44 +994,47 @@ class M2FeasibilityEvaluatorAgent(M2BaseAgent):
             )
 
     def _check_technical_complexity_per_function(self, fpa_results: List[FPAAssessmentResult], function_list: List[Dict[str, Any]]) -> RuleCheckResult:
-        """检查单个功能技术复杂性（基于单个功能点）"""
+        """检查单个功能技术复杂性（放宽判定：仅 HIGH + ILF/EIF 组合才警告）"""
         try:
-            affected_nodes = []
+            # 仅记录到 evidence 供前端展示，不写入 affected_nodes
+            # （high_technical_complexity 属于 REPORT_ONLY，不触发自动拆分）
             high_complexity_functions = []
-            
-            # 技术复杂性评估基于功能类型和复杂度
+
             for i, fpa_result in enumerate(fpa_results):
                 if fpa_result.function_classifications:
                     classification = fpa_result.function_classifications[0]
                     function_id = function_list[i].get("id", f"function_{i}")
-                    
-                    # 高复杂性功能识别标准
+
+                    # 放宽判定：仅 HIGH 复杂度 + ILF/EIF 组合才认为复杂
+                    # EO/EI/EQ 不再因类型而自动判复杂
                     is_high_complexity = (
-                        classification.complexity == "HIGH" or
-                        classification.function_type in ["EO", "ILF"]  # 外部输出和内部逻辑文件通常更复杂
+                        classification.complexity == "HIGH"
+                        and classification.function_type in ["ILF", "EIF"]
                     )
-                    
+
                     if is_high_complexity:
                         high_complexity_functions.append({
                             "function_id": function_id,
                             "function_type": classification.function_type,
-                            "complexity": classification.complexity
+                            "complexity": classification.complexity,
                         })
-                        affected_nodes.append(function_id)
-            
-            if affected_nodes:
+
+            if high_complexity_functions:
                 return RuleCheckResult(
                     rule_id="feasibility_006",
                     rule_name="技术复杂性评估",
                     category=RuleCategory.FEASIBILITY,
                     severity=RuleSeverity.WARNING,
                     issue_type=IssueType.HIGH_TECHNICAL_COMPLEXITY,
-                    description=f"发现{len(affected_nodes)}个技术复杂性较高的子功能",
-                    affected_nodes=affected_nodes,
+                    description=(
+                        f"发现{len(high_complexity_functions)}个技术复杂性较高的子功能"
+                        "（HIGH复杂度 + ILF/EIF），请关注但不触发自动拆分"
+                    ),
+                    affected_nodes=[],  # REPORT_ONLY：不触发自动拆分
                     affected_dependencies=[],
                     recommendation="高复杂性功能建议采用简化实现或技术验证",
                     evidence={"high_complexity_functions": high_complexity_functions},
-                    passed=False
+                    passed=False,
                 )
             else:
                 return RuleCheckResult(

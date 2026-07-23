@@ -478,7 +478,9 @@ class SubARRefiner:
             )
             if not isinstance(nested_feas, dict):
                 nested_feas = {}
-            nested_failed = self.invoker._extract_feasibility_failed_node_ids(nested_feas)
+            nested_failed = self.invoker._extract_feasibility_failed_node_ids(
+                nested_feas, function_list=fl
+            )
 
             log.append({
                 "scope_root_node_id": nid,
@@ -530,8 +532,10 @@ class SubARRefiner:
         root_eval = copy.deepcopy(context.artifacts.get("evaluation"))
         root_cons = copy.deepcopy(context.artifacts.get("consistency_evaluation"))
         root_feas = copy.deepcopy(context.artifacts.get("feasibility_evaluation") or {})
+        fl_current = context.artifacts.get("function_list") or []
         failed = self.invoker._extract_feasibility_failed_node_ids(
-            root_feas if isinstance(root_feas, dict) else {}
+            root_feas if isinstance(root_feas, dict) else {},
+            function_list=fl_current if isinstance(fl_current, list) else [],
         )
         if not failed:
             return

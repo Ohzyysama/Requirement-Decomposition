@@ -112,6 +112,57 @@ class ConsistencyEvaluationResult(AppBaseModel):
 
 ############################## 可实现性相关##############################
 
+class DeveloperEffortEstimate(BaseModel):
+    """LLM 对单个子功能的开发工作量估算（按开发者经验分层）"""
+    function_id: str = Field(..., description="功能节点 ID")
+
+    # ── FPA 语义分类（LLM 判断，替代关键词匹配）──
+    function_type: str = Field(
+        ..., description="功能类型: EI/EO/EQ/ILF/EIF",
+        pattern="^(EI|EO|EQ|ILF|EIF)$"
+    )
+    complexity: str = Field(
+        ..., description="复杂度: LOW/MEDIUM/HIGH",
+        pattern="^(LOW|MEDIUM|HIGH)$"
+    )
+    classification_reason: str = Field(
+        default="", description="FPA 分类理由"
+    )
+
+    # ── 按开发者经验估算实现时间（核心新增）──
+    junior_dev_days: float = Field(
+        ..., description="1-2年经验的初级开发者预计实现天数（含自测）"
+    )
+    mid_dev_days: float = Field(
+        ..., description="3-5年经验的中级开发者预计实现天数（含自测）"
+    )
+    senior_dev_days: float = Field(
+        ..., description="5年+经验的高级开发者预计实现天数（含自测）"
+    )
+
+    # ── 拆分合理性判断 ──
+    needs_further_split: bool = Field(
+        default=False,
+        description="基于经验判断，该功能是否建议进一步拆分"
+    )
+    split_reason: Optional[str] = Field(
+        default=None, description="如需拆分，说明原因"
+    )
+
+    # ── 置信度 ──
+    confidence: float = Field(default=0.8, ge=0.0, le=1.0)
+
+
+class PerFunctionEffortEstimateResult(BaseModel):
+    """批量功能开发工作量估算结果"""
+    estimates: List[DeveloperEffortEstimate] = Field(
+        default_factory=list, description="逐功能估算列表"
+    )
+    overall_notes: Optional[str] = Field(
+        default=None, description="整体说明"
+    )
+
+
 class FPAFunctionClassification(BaseModel):
     """FPA功能分类结果"""
     function_id: str = Field(..., description="功能ID")
