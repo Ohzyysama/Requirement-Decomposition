@@ -1,0 +1,8 @@
+.claude/
+backend_release/backend/uploads/
+backend_release/backend/logs/
+__pycache__/
+*.pyc
+node_modules/
+dist/
+.env
