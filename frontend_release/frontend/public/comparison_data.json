@@ -1,0 +1,26 @@
+{
+  "generated": true,
+  "srCount": 1,
+  "standardAR": 8,
+  "note": "仅跑了 SR-01 播放控制与队列（8 AR）。复杂 SR 差异会更明显。",
+  "before": {
+    "avgNodeCount": 9,
+    "avgTreeDepth": 2,
+    "overlySplitNodes": 1,
+    "elapsedSeconds": 65,
+    "feasibilityScore": 0.477,
+    "consistencyScore": 0.75,
+    "overallScore": 0.586,
+    "recommendation": "revise"
+  },
+  "after": {
+    "avgNodeCount": 10,
+    "avgTreeDepth": 2,
+    "overlySplitNodes": 1,
+    "elapsedSeconds": 80,
+    "feasibilityScore": 0.596,
+    "consistencyScore": 0.75,
+    "overallScore": 0.658,
+    "recommendation": "revise"
+  }
+}
