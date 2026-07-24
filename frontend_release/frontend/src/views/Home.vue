@@ -2,7 +2,7 @@
 import router from "../router/index"
 import { useUserStore } from "@/stores/userStore" // 引入Pinia store
 import {ElMessage, ElMessageBox} from "element-plus";
-import { ArrowLeft } from '@element-plus/icons-vue'
+import { ArrowLeft, DataAnalysis } from '@element-plus/icons-vue'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -74,6 +74,7 @@ const goBack = () => {
             </template>
             <template #extra>
               <el-space :size="25">
+                <el-button type="primary" :icon="DataAnalysis" round @click="router.push('/comparison')">优化对比</el-button>
                 <el-space :size="20">
                   <img src="../assets/logo.svg" alt="user" class="playerAvatar" />
                   <span style="color: black;">{{ username }}</span>

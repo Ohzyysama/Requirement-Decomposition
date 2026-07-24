@@ -6,6 +6,7 @@ import Chat from '@/components/chat.vue'
 import EvaluationReport from "@/components/evaluation/EvaluationReport.vue";
 import FunctionTree from "@/components/function/FunctionTree.vue";
 import FunctionNode from "@/components/function/FunctionNode.vue";
+import OptimizationComparison from "@/views/OptimizationComparison.vue";
 
 
 const routes = [
@@ -20,6 +21,10 @@ const routes = [
     {
         path: '/register',
         component: register
+    },
+    {
+        path: '/comparison',
+        component: OptimizationComparison,
     },
     {
         path: '/home',
